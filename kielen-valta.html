@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kielen valta — Mekanismirealismi</title>
+    <meta name="description" content="Kenttäopas semanttisen sumutuksen tunnistamiseen. 25 kielellisen manipulaation kuviota purettuina.">
+    <link rel="canonical" href="https://mekanismirealismi.fi/kielen-valta">
+    <meta property="og:title" content="Kielen valta — Mekanismirealismi">
+    <meta property="og:description" content="Kenttäopas semanttisen sumutuksen tunnistamiseen. 25 kielellisen manipulaation kuviota purettuina.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mekanismirealismi.fi/kielen-valta">
+    <meta property="og:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <meta property="og:site_name" content="Mekanismirealismi">
+    <meta property="og:locale" content="fi_FI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <meta name="twitter:title" content="Kielen valta — Mekanismirealismi">
+    <meta name="twitter:description" content="Kenttäopas semanttisen sumutuksen tunnistamiseen. 25 kielellisen manipulaation kuviota purettuina.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .arg-section {
+            margin-bottom: 2.5rem;
+        }
+        .section-label {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .arg-card {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent);
+            margin-bottom: 0.6rem;
+            transition: border-color 0.15s;
+        }
+        .arg-card:hover {
+            border-left-color: #f08030;
+        }
+        .arg-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            cursor: pointer;
+            user-select: none;
+        }
+        .arg-header-text {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem;
+            min-width: 0;
+        }
+        .arg-num {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .arg-claim {
+            font-style: italic;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+        .arg-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent-dim);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+        .arg-toggle {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-left: 1rem;
+            width: 1.2rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .arg-body {
+            display: none;
+            padding: 0 1.2rem 1.2rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0;
+        }
+        .arg-card.open .arg-body {
+            display: block;
+        }
+        .arg-card.open .arg-toggle {
+            transform: rotate(45deg);
+        }
+        .arg-vastaus {
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-top: 0.8rem;
+        }
+        .arg-vastaus p {
+            margin-bottom: 0.8rem;
+            max-width: none;
+        }
+        .arg-vastaus ul, .arg-vastaus ol {
+            margin: 0.5rem 0 0.8rem 1.5rem;
+        }
+        .arg-vastaus li {
+            margin-bottom: 0.3rem;
+        }
+        .arg-vastaus blockquote {
+            border-left: 2px solid var(--accent-dim);
+            padding-left: 1rem;
+            margin: 0.8rem 0;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+        .arg-vastaus code {
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+            background: rgba(255,255,255,0.05);
+            padding: 0.1em 0.3em;
+        }
+        .arg-vastaus table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.88rem;
+        }
+        .arg-vastaus th, .arg-vastaus td {
+            text-align: left;
+            padding: 0.5rem 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .arg-vastaus th {
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+        }
+        .arg-vastaus .torjunta-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .page-intro {
+            max-width: 640px;
+            margin-bottom: 2rem;
+            color: var(--text-dim);
+        }
+        .expand-all {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        .expand-all:hover {
+            color: var(--accent);
+        }
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        .summary-table th, .summary-table td {
+            text-align: left;
+            padding: 0.5rem 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .summary-table th {
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+        }
+        .matkalaukku-block {
+            margin: 1rem 0;
+        }
+        .matkalaukku-block .mk-cat {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .matkalaukku-block .mk-item {
+            margin-bottom: 0.3rem;
+            padding-left: 1rem;
+        }
+        .closing-section {
+            margin-top: 2.5rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .closing-section p {
+            margin-bottom: 0.8rem;
+        }
+        .cta-box {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-dim);
+            padding: 1.5rem 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        @media (max-width: 640px) {
+            .arg-header {
+                padding: 0.7rem 0.8rem;
+            }
+            .arg-body {
+                padding: 0 0.8rem 0.8rem;
+            }
+            .arg-header-text {
+                gap: 0.3rem;
+            }
+            .arg-claim {
+                font-size: 0.88rem;
+            }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Kielen valta — kenttäopas semanttisen sumutuksen tunnistamiseen",
+        "description": "Kenttäopas semanttisen sumutuksen tunnistamiseen. 25 kielellisen manipulaation kuviota purettuina.",
+        "url": "https://mekanismirealismi.fi/kielen-valta",
+        "author": {
+            "@type": "Person",
+            "name": "Elias Kunnas"
+        },
+        "inLanguage": "fi"
+    }
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;">
+        <a class="logo" href="/">Mekanismirealismi</a>
+        <nav>
+            <a href="/">Etusivu</a>
+            <a href="argumentit">68 virhettä</a>
+            <a href="mekanismivirasto">MeV</a>
+            <a href="qa">Q&amp;A</a>
+            <a href="haku">Haku</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <section class="hero" style="border-bottom:none; padding-bottom:2rem;">
+        <h1>Kielen valta</h1>
+        <p class="page-intro" style="font-style:italic;">Kenttäopas semanttisen sumutuksen tunnistamiseen</p>
+        <p class="page-intro"><em>Kieli on käyttöliittymä todellisuuteen. Jos käyttöliittymä on vääristynyt, emme voi korjata konetta. Tämä osa on kenttäopas poliittisen kielen purkamiseen &mdash; sanakirja sille, miten vastuu kadotetaan lause kerrallaan.</em></p>
+    </section>
+
+    <section style="padding-top:0; padding-bottom:2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem;">
+        <p>Tieteen alkuperäinen lupaus oli yksinkertainen: <em>nullius in verba</em> &mdash; älä usko kenenkään sanaan, tarkista itse. Royal Societyn motto vuodelta 1660.</p>
+
+        <p>Nykyinen hallintotapa on kääntänyt lupauksen päälaelleen: <strong>Usko prosessia.</strong> Älä kysy mitä tapahtuu &mdash; luota siihen, että joku hoitaa.</p>
+
+        <p>Kieli on muuttunut tiedonvälityksestä peittämisen välineeksi. Tämä osa antaa työkalut verhojen repimiseen.</p>
+
+        <p><strong>Epäselvyys ei ole virhe, se on ominaisuus. Monimutkainen kieli on teknologia, jolla valta suojautuu vastuulta.</strong></p>
+
+        <p>Tämä osa on episteemisen hygienian käsikirja. Samalla tavalla kuin käsihygienia suojaa infektioilta, episteeminen hygienia suojaa manipulaatiolta. Se on aktiivinen, jatkuva prosessi &mdash; ei kertasuoritus vaan käytäntö.</p>
+
+        <h2 style="font-size:1.3rem; margin-top:2rem; margin-bottom:1rem;">Miksi näitä kuvioita syntyy?</h2>
+        <p>Viisi rakenteellista ajuria:</p>
+        <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li><strong>Institutionaalinen tapa:</strong> &laquo;Näin meillä on aina kirjoitettu.&raquo; Virkakieli periytyy sukupolvelta toiselle ilman, että kukaan kysyy miksi.</li>
+            <li><strong>Ammatillinen deformaatio:</strong> Byrokratia palkitsee epämääräisyyttä. Tarkkuus luo vastuuta; sumeus suojaa.</li>
+            <li><strong>Puolustusrefleksi:</strong> Kun tarkkuudesta on rangaistu (mediakohu, oikeuskanne), opitaan välttämään sitä.</li>
+            <li><strong>Aito osaamattomuus:</strong> Ketään ei ole opetettu kirjoittamaan selkeästi. Yliopistot opettavat akateemista jargonia, eivät operatiivista kieltä.</li>
+            <li><strong>Systeeminen paine:</strong> Kun veto-verkko estää päätökset, kieli mukautuu: se alkaa kuvata prosessia tulosten sijaan.</li>
+        </ul>
+        <p>Lopputulos on sama riippumatta syystä: <strong>kieli irtoaa todellisuudesta</strong>. Sanat lakkaavat sitomasta, lupaukset lakkaavat velvoittamasta, ja kansalainen menettää kykynsä ymmärtää, mitä tapahtuu.</p>
+
+        <h2 style="font-size:1.3rem; margin-top:2rem; margin-bottom:1rem;">Miksi selkeä kieli on tärkeää?</h2>
+        <p>Selkeä kieli on <strong>edellytys kaikelle toimivalle</strong>:</p>
+        <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li><strong>Insinöörityön perusta:</strong> Et voi rakentaa järjestelmää, jota et osaa spesifioida. &laquo;Parannetaan palvelua&raquo; ei ole spesifikaatio &mdash; &laquo;vähennetään jonotusaikaa 50&nbsp;%&raquo; on.</li>
+            <li><strong>Koordinaation infrastruktuuri:</strong> Yhteinen sanasto mahdollistaa yhteisen ymmärryksen. Kun kaksi ihmistä käyttää samaa sanaa eri merkityksessä, he eivät koordinoi &mdash; he puhuvat ohi.</li>
+            <li><strong>Ajattelun työkalu:</strong> Et voi ajatella selkeästi asiasta, jota et osaa artikuloida selkeästi. Sumea kieli tuottaa sumeaa ajattelua.</li>
+            <li><strong>Suunnittelun pakote:</strong> Selkeys pakottaa kohtaamaan vaikeat kysymykset. Kun kirjoitat &laquo;kuka tekee, mitä, milloin, millä mittarilla&raquo;, et voi paeta kompromisseja.</li>
+            <li><strong>Luottamuksen rakennusaine:</strong> Selkeät sitoumukset rakentavat luottamusta. Kun sanot tarkalleen, mitä teet, voit pitää sanasi &mdash; tai et voi, ja se näkyy.</li>
+            <li><strong>Vastuullisuuden mahdollistaja:</strong> Voit olla vastuussa vain siitä, mikä on selkeästi määritelty. Epämääräisyys on vastuupakoilun esiaste.</li>
+        </ul>
+        <p>Organisaatio, joka ei osaa kirjoittaa selkeästi, ei osaa myöskään ajatella, suunnitella tai toteuttaa selkeästi.</p>
+
+        <h2 style="font-size:1.3rem; margin-top:2rem; margin-bottom:1rem;">Semanttiset matkalaukut</h2>
+        <p>Insinööri ei voi suunnitella siltaa, jos &laquo;teräs&raquo; tarkoittaa toiselle &laquo;kovaa ainesta&raquo; ja toiselle &laquo;sortoa&raquo;.</p>
+        <p>Olemme kirjassa tunnistaneet kolme tapaa, joilla sanat pettävät:</p>
+        <ol style="margin:0.5rem 0 1rem 1.5rem;">
+            <li><strong>Tyhjiö.</strong> Sana ilman merkitystä. &laquo;Asiaa selvitetään&raquo; &mdash; kuulostaa toiminnalta, ei sido mihinkään.</li>
+            <li><strong>Eroosio.</strong> Sana, jonka merkitys on kulunut pois. &laquo;Hoitotakuu&raquo; &mdash; 7 päivän takuu paperilla, 16 kuukauden jonot todellisuudessa. Funktiosignatuuri on jäljellä, toteutus palauttaa tyhjän.</li>
+            <li><strong>Matkalaukku.</strong> Sana, johon on pakattu liikaa (Marvin Minskyn <em>suitcase word</em>, 2006). &laquo;Kapitalismi&raquo; &mdash; zip-pommi, joka purkautuessaan tuottaa enemmän merkitystä kuin vastaanottaja pystyy käsittelemään. Jokainen kuulija purkaa oman versionsa.</li>
+        </ol>
+        <p>Näistä matkalaukku on vaarallisin, koska se <em>näyttää</em> merkitykselliseltä. Tyhjiön voi tunnistaa tyhjyydestä, eroosion voi todentaa vertaamalla lupaukseen. Matkalaukku piiloutuu näennäisen yhteisymmärryksen taakse.</p>
+        <p>Poliittinen sanasto on täynnä matkalaukkuja. Keskustelusta tulee tunnepeliä, jossa osapuolet puhuvat eri asioista samalla sanalla &mdash; ja kumpikin on varma, että toinen on vilpillinen tai tyhmä.</p>
+
+        <p><strong>Tunnistaminen:</strong> Sana on matkalaukku, kun se täyttää kolme ehtoa:</p>
+        <ol style="margin:0.5rem 0 1rem 1.5rem;">
+            <li><strong>Mekanismien peittäminen.</strong> Sana piilottaa rakenteen &mdash; sen kuuleminen ei kerro, mistä mekanismista puhutaan. &laquo;Kapitalismi&raquo; voi viitata hintasignaaliin, pääoman kasautumiseen, kilpailullisiin markkinoihin, monopoliin tai riistoon. Mikä näistä?</li>
+            <li><strong>Heimolajittelu.</strong> Sanan käyttö tai välttäminen paljastaa, mihin leiriin kuulut &mdash; ei sitä, mitä ajattelet. &laquo;Hyvinvointivaltio&raquo; on vasemmiston kunnianimi ja oikeiston haukkumasana. Sama kone, kaksi tunnelatausta. Ei informaatiota.</li>
+            <li><strong>Analyysin lopettaminen.</strong> Sana toimii tuomiona, ei diagnoosina. &laquo;Se on kapitalismia&raquo; lopettaa keskustelun. &laquo;Se kannustinrakenne palkitsee lyhyen aikavälin arvonlouhintaa&raquo; aloittaa sen.</li>
+        </ol>
+
+        <div class="matkalaukku-block">
+            <p class="mk-cat">Ismi-paketit &mdash; kokonaisia maailmankuvia yhdessä sanassa:</p>
+            <p class="mk-item">&laquo;Kapitalismi&raquo; &rarr; Hintamekanismi, pääoman kasautuminen, kilpailullinen markkina</p>
+            <p class="mk-item">&laquo;Sosialismi&raquo; &rarr; Tulonsiirtomekanismi, kollektiivinen omistus, keskitetty allokaatio</p>
+        </div>
+
+        <div class="matkalaukku-block">
+            <p class="mk-cat">Hyve/pahe-tuomiot &mdash; tunteita argumentteina:</p>
+            <p class="mk-item">&laquo;Oikeudenmukaisuus&raquo; &rarr; Tasajako, ansiojako, proseduraalinen reiluus (<em>määriteltävä</em>)</p>
+            <p class="mk-item">&laquo;Tasa-arvo&raquo; &rarr; Tulosyhtäläisyys vs. mahdollisuusyhtäläisyys</p>
+        </div>
+
+        <div class="matkalaukku-block">
+            <p class="mk-cat">Tunnepesu-termit &mdash; hallintoon livahtaneita markkinointisanoja:</p>
+            <p class="mk-item">&laquo;Kestävyys&raquo; &rarr; Solvenssi, uusiutuvuus, termodynaamisesti kestävä</p>
+            <p class="mk-item">&laquo;Hyvinvointivaltio&raquo; &rarr; Verorahoitteinen palvelutuotanto, tulonsiirtojärjestelmä</p>
+        </div>
+
+        <div class="matkalaukku-block">
+            <p class="mk-cat">Identiteetti-lajittelijat &mdash; heimomerkkejä, eivät kuvauksia:</p>
+            <p class="mk-item">&laquo;Demokratia&raquo; &rarr; Enemmistöpäätöksenteko, äänestysmekanismi</p>
+            <p class="mk-item">&laquo;Edistyksellinen&raquo; &rarr; Määrittele <em>mikä asia</em> ja <em>mihin suuntaan</em></p>
+        </div>
+
+        <p><strong>Testi:</strong> Jos sana ei käänny spesifiksi, testattavaksi väitteeksi mekanismista, se on matkalaukku. &laquo;Kapitalismi on paha&raquo; &mdash; ei testattavissa. &laquo;Tämä kannustinrakenne palkitsee lyhyen aikavälin arvonlouhintaa pitkän aikavälin pääoman kustannuksella&raquo; &mdash; testattavissa.</p>
+
+        <p><strong>Väärä Schelling-piste:</strong> Matkalaukku on koordinaatiomekanismi, joka de-koordinoi. &laquo;Tavataan torilla&raquo; toimii, koska kaikki tietävät, mikä tori. &laquo;Tavataan oikeudenmukaisuudessa&raquo; ei toimi, koska jokainen seisoo eri torilla. Kaikki lupaavat kannattaa &laquo;oikeudenmukaisuutta&raquo; &mdash; mutta kukaan ei ole samassa paikassa. Tämä on kielellinen näennäisliike: näennäinen yhteisymmärrys, ei koordinaatiota.</p>
+
+        <p><strong>Protokolla:</strong> Kun keskustelu jumittuu siihen, mitä sana <em>tarkoittaa</em> sen sijaan, miten <em>mekanismi toimii</em> &mdash; sana poistetaan <em>siitä keskustelusta</em>. Ei universaalisti, ei ikuisesti, vaan operatiivisesti: &laquo;Tämä sana tukkii keskustelun. Kerro ilman sitä, mitä mekanismia tarkoitat.&raquo;</p>
+
+        <p>Jokainen osapuoli kuvaa omin sanoin sen rakenteen, johon viittaa. Usein käy ilmi, että he puhuvatkin eri asioista &mdash; tai samasta asiasta, ja koko riita oli metatason harha. Kummassakin tapauksessa keskustelu vapautuu etenemään.</p>
+
+        <p><strong>Poikkeus:</strong> Jos keskustelun nimenomaisena kohteena on sanan määritelmä (lakiteksti, taksonomia, standardi), sana on työn kohde, ei este. Silloin sitä ei kielletä &mdash; silloin sitä puretaan.</p>
+
+        <p>Tämä on diskurssin <em>velkajarru</em>. Samalla tavalla kuin talouden velkajarru estää kuluttamasta tulevaisuuden resursseja, matkalaukkukielto estää kuluttamasta keskustelun kaistanleveyttä sanoihin, jotka pyörittävät keskustelua paikallaan &mdash; näennäisliikettä kielen tasolla.</p>
+
+        <p><em>Huomautus:</em> Tämä kirja käyttää sanoja kuten &laquo;demokratia&raquo; &mdash; mutta aina purettuna, kontekstissa jossa mekanismi on nimetty. Matkalaukku on vaarallinen vain suljettuna.</p>
+
+        <p>Kun insinööri sanoo &laquo;silta on epävakaa&raquo;, hän ei sano &laquo;silta on kommunistinen&raquo; tai &laquo;silta on kapitalistinen&raquo;. Hän sanoo: &laquo;vetolujuus ei riitä.&raquo;</p>
+
+        <p>Jos et pysty ilmaisemaan asiaasi ilman matkalaukkua, et todennäköisesti ymmärrä mekanismia, josta puhut. Pura matkalaukku osiin. Puhu mekanismeista.</p>
+
+        <p><em>Kyllä, &laquo;mekanismirealismi&raquo; on itsekin -ismi. Se on hyödyllinen niin kauan kuin sen voi purkaa osiin: &laquo;mekanismi&raquo; (rakenne, jolla syy tuottaa seurauksen) + &laquo;realismi&raquo; (todellisuus on olemassa ja rajoittaa toimintaa). Kun nämä osat lakkaavat olemasta informatiivisia, hylkää sana.</em></p>
+
+        <p>Konfutse sanoi 2&thinsp;500 vuotta sitten: jos nimet eivät ole oikein, kieli ei vastaa todellisuutta; jos kieli ei vastaa todellisuutta, teot epäonnistuvat (<em>Keskustelut</em>, 13.3). Mekanismivirasto on nimien oikaisemista teollisessa mittakaavassa.</p>
+    </section>
+
+    <section id="kuviot" style="padding-top:0;">
+
+    <span class="expand-all" onclick="toggleAll()">[Avaa / sulje kaikki]</span>
+
+    <!-- I. Semanttinen tyhjentäminen -->
+    <div class="arg-section">
+        <h3 class="section-label">I. Semanttinen tyhjentäminen</h3>
+        <p style="margin-bottom:1rem; color:var(--text-dim); font-size:0.92rem;">Sanat, jotka näyttävät merkityksellisiltä mutta eivät sido mihinkään.</p>
+
+        <div class="arg-card" id="arg-1">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">1.</span>
+                    <span class="arg-claim">Semanttinen tyhjiö</span>
+                    <span class="arg-label">Sana ilman sisältöä</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Ilmaus, joka kuulostaa merkitykselliseltä mutta ei sitoudu mihinkään konkreettiseen.</p>
+                    <p>Semanttinen tyhjiö ei ole valhe vaan jotain pahempaa: valheen voi paljastaa. Tyhjiötä ei voi, koska se ei väitä mitään.</p>
+                    <table>
+                        <tr><th>Kuulet</th><th>Kysy</th></tr>
+                        <tr><td>&laquo;Käsittelemme asiaa&raquo;</td><td>Kuka käsittelee? Mikä on aikataulu? Mikä on tuotos?</td></tr>
+                        <tr><td>&laquo;Suhtaudumme vakavasti&raquo;</td><td>Mitä &laquo;vakavasti suhtautuminen&raquo; tarkoittaa käytännössä?</td></tr>
+                        <tr><td>&laquo;Olemme sitoutuneet&raquo;</td><td>Mihin tarkalleen? Millä mittarilla voin tarkistaa?</td></tr>
+                        <tr><td>&laquo;Asiaa selvitetään&raquo;</td><td>Kuka selvittää? Milloin valmis? Mitä tapahtuu, jos ei valmistu?</td></tr>
+                        <tr><td>&laquo;Kehitämme järjestelmää&raquo;</td><td>Mikä on tavoite? Mikä on aikataulu? Mikä on budjetti?</td></tr>
+                    </table>
+                    <p><strong>Mekanismi:</strong> Poliitikko on mesaoptimoija. Hänen tavoitteensa ei ole ratkaista ongelmaasi &mdash; hänen tavoitteensa on vaikuttaa siltä, että hän ratkaisee ongelmasi, minimoiden riskin epäonnistumisesta. Semanttinen tyhjiö tuottaa vaikutelman toiminnasta ilman toiminnan riskiä.</p>
+                    <p><strong>Sääntö:</strong> Jos lauseesta ei voi johtaa tarkistettavaa ennustetta, se on semanttinen tyhjiö.</p>
+                    <p>&laquo;Parannamme palvelua&raquo; &mdash; tyhjiö. &laquo;Vähennämme jonotusaikaa 14 päivään 1.1.2027 mennessä&raquo; &mdash; sitoumus.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-2">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">2.</span>
+                    <span class="arg-claim">Semanttinen eroosio</span>
+                    <span class="arg-label">Nimi elää, funktio kuollut</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Prosessi, jossa instituutio tai käsite säilytetään syntaktisesti, mutta tyhjennetään semanttisesti.</p>
+                    <p><strong>Ohjelmoijan analogia:</strong> Funktiosignatuuri pidetään samana taaksepäinyhteensopivuuden vuoksi, mutta toteutus korvataan tyhjällä (<code>return void</code>).</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li><strong>Presidentti-instituutio:</strong> Sana &laquo;presidentti&raquo; on perustuslaissa, Linnan juhlat pidetään. Mutta kun kutsut <code>presidentti.tee_päätös()</code>, saat tyhjän.</li>
+                        <li><strong>Hoitotakuu:</strong> &laquo;7 päivän hoitotakuu&raquo; on laissa. Todellisuus: 16 kk jonot. Syntaksi elää, semantiikka kuollut.</li>
+                        <li><strong>Demokratia:</strong> Vaalit pidetään, eduskunta kokoontuu. Mutta päätökset tehdään konsulttien ja veto-verkon takana.</li>
+                    </ul>
+                    <p><strong>Mekanismi:</strong> Kukaan ei &laquo;poista&raquo; instituutiota &mdash; se refaktoroidaan kuoliaaksi. Muoto säilyy, sisältö häviää.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mitä tämä instituutio <em>tekee</em>, ei mitä se <em>on</em>?&raquo;</li>
+                        <li>&laquo;Mikä on ero de jure (laki) ja de facto (todellisuus) välillä?&raquo;</li>
+                        <li>&laquo;Näytä mittari, ei nimeä.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-3">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">3.</span>
+                    <span class="arg-claim">Katteettomat vaateet</span>
+                    <span class="arg-label">Oikeus ilman tuottajaa</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> &laquo;Oikeus&raquo;, josta puuttuu tuottaja, täytäntöönpano ja edellytykset.</p>
+                    <p>Monet &laquo;oikeudet&raquo; eivät ole tyhjentyneet &mdash; ne syntyivät tyhjinä.</p>
+                    <p>Katteeton vaade = &laquo;oikeus&raquo;, josta puuttuu:</p>
+                    <ol>
+                        <li><strong>Tuottaja:</strong> Kuka on velvollinen tuottamaan oikeuden kohteen?</li>
+                        <li><strong>Täytäntöönpano:</strong> Mikä mekanismi pakottaa tuottajan toimimaan?</li>
+                        <li><strong>Edellytykset:</strong> Mitkä olosuhteet mahdollistavat toteutumisen?</li>
+                    </ol>
+                    <p><strong>Esimerkki:</strong> YK:n ihmisoikeuksien julistus, artikla 25: &laquo;Jokaisella on oikeus riittävään elintasoon.&raquo; Kuka tuottaa? Millä mekanismilla? Vastaukset puuttuvat. Tämä ei ole oikeus, joka &laquo;tyhjentyi&raquo; &mdash; se ei koskaan ollut operationaalinen.</p>
+                    <p><strong>Erottelu:</strong> <em>Semanttinen eroosio</em> tarkoittaa, että instituutio <em>toimi</em> kerran mutta tyhjentyi (presidentti-instituutio). <em>Katteeton vaade</em> ei koskaan toiminut &mdash; syntyi tyhjänä (&laquo;oikeus työhön&raquo;).</p>
+                    <p><strong>Miksi katteettomat vaateet ovat haitallisia:</strong></p>
+                    <ul>
+                        <li>Vievät tilan, johon todellinen protokolla voisi tulla</li>
+                        <li>Luovat illuusion, että asia on &laquo;hoidettu&raquo;</li>
+                        <li>Laimentavat toimivien oikeuksien arvoa</li>
+                    </ul>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Kuka tuottaa tämän oikeuden? Millä resursseilla?&raquo;</li>
+                        <li>&laquo;Mitä tapahtuu, jos oikeutta loukataan? Mikä on sanktiomekanismi?&raquo;</li>
+                        <li>&laquo;Onko tämä oikeus vai toive?&raquo;</li>
+                        <li>Korvaa &laquo;oikeus&raquo; sanalla &laquo;protokolla&raquo; &mdash; silloin voit etsiä virheitä.</li>
+                        <li>&laquo;Täyslaskenta tehdään ennen laukaisua, ei sen jälkeen. Avaruusmissiossa ei etsitä vikoja lennon aikana.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-4">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">4.</span>
+                    <span class="arg-claim">Zombilaki</span>
+                    <span class="arg-label">Laki voimassa, käytännössä kuollut</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Laki, joka on voimassa paperilla, mutta kuollut käytännössä.</p>
+                    <p>Mikä tekee laista elävän? Neljä elementtiä:</p>
+                    <table>
+                        <tr><th>Elementti</th><th>Kysymys &mdash; ja mitä tapahtuu kun puuttuu</th></tr>
+                        <tr><td><strong>Kuka</strong></td><td>Kuka on vastuussa? <em>Monen käden ongelma &mdash; velvoite on, kukaan ei omista.</em></td></tr>
+                        <tr><td><strong>Mitä</strong></td><td>Mitä pitää tehdä? <em>Aspirationaalinen tyhjiö &mdash; tuomioistuin ei voi pakottaa.</em></td></tr>
+                        <tr><td><strong>Milloin</strong></td><td>Mihin mennessä? <em>Ikuinen viivästys &mdash; virasto vetoaa resurssipulaan.</em></td></tr>
+                        <tr><td><strong>Seuraamus</strong></td><td>Mitä tapahtuu, jos ei? <em>Lex imperfecta &mdash; rikkomus todetaan, mitään ei seuraa.</em></td></tr>
+                    </table>
+                    <p>Jos jokin puuttuu, laki on zombi.</p>
+                    <p><strong>Harjoitus:</strong> Tutki mitä tahansa lakia:</p>
+                    <ul>
+                        <li>&laquo;Tulee varmistaa&raquo; &mdash; <em>kuka</em> varmistaa?</li>
+                        <li>&laquo;Riittävät resurssit&raquo; &mdash; <em>paljonko</em> on riittävästi?</li>
+                        <li>&laquo;Kohtuullisessa ajassa&raquo; &mdash; <em>milloin</em> tarkalleen?</li>
+                        <li>&laquo;Tarvittaessa&raquo; &mdash; <em>kuka</em> päättää tarpeen?</li>
+                    </ul>
+                    <p>Nämä ovat semanttisia aukkoja. Ne kuulostavat merkityksellisiltä, mutta niiltä puuttuu toiminnallinen sisältö.</p>
+                    <p><strong>Miksi tämä ei ole vahinko:</strong> Hallitusneuvotteluissa viisi puoluetta allekirjoittaa &laquo;riittävät resurssit&raquo;, koska jokainen tulkitsee sen omalla tavallaan.</p>
+                    <p>Ristiriita ei ratkea &mdash; se siirtyy toimeenpanoon, jossa virkamies päättää ilman demokraattista mandaattia. Epämääräisyydestä tulee harkintavaltaa. Lainsäädäntövalta siirtyy eduskunnalta hallinnolle.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- II. Monimutkaisuuspesu -->
+    <div class="arg-section">
+        <h3 class="section-label">II. Monimutkaisuuspesu</h3>
+        <p style="margin-bottom:1rem; color:var(--text-dim); font-size:0.92rem;">Kustannusten ja vastuun piilottaminen siirtämällä ne jonnekin muualle.</p>
+
+        <div class="arg-card" id="arg-5">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">5.</span>
+                    <span class="arg-claim">Tilallinen pesu</span>
+                    <span class="arg-label">Hyöty täällä, haitta tuolla</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Kustannukset ilmenevät eri paikassa tai eri populaatiossa kuin hyödyt. Hyöty on näkyvä täällä, haitta näkymätön tuolla.</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li>Vuokrakatto &laquo;auttaa vuokralaisia&raquo; (näkyvä hyöty) &rarr; asuntotarjonta vähenee, rakennukset rapautuvat (näkymätön haitta muualla)</li>
+                        <li>Valtio säätää velvoitteen (saa kunnian), kunta maksaa (kantaa taakan)</li>
+                        <li>Ministeriö X:n uudistus siirtää kustannuksia ministeriö Y:lle &mdash; X saa poliittiset pisteet, Y saa laskun</li>
+                    </ul>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Missä kustannus ilmenee? Kuka kantaa taakan?&raquo;</li>
+                        <li>&laquo;Näytä kaavio, jossa kaikki hyödyt JA haitat ovat näkyvissä.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-6">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">6.</span>
+                    <span class="arg-claim">Ajallinen pesu</span>
+                    <span class="arg-label">Hyöty nyt, lasku huomenna</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Hyödyt ilmenevät nyt, kustannukset myöhemmin &mdash; ensi vuosikymmenellä, seuraavalle sukupolvelle, vaalikauden jälkeen. Päättäjä saa kunnian tänään, joku muu maksaa huomenna.</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li>Valtionvelka &mdash; rahaa nyt, lasku lapsenlapsille</li>
+                        <li>Eläkelupaukset ilman katetta &mdash; ääniä nyt, maksukyvyttömyys 2040</li>
+                        <li>Infrastruktuurin korjausvelka &mdash; säästöjä nyt, romahdus myöhemmin</li>
+                        <li>Koulutusleikkaukset &mdash; budjettitasapaino nyt, osaamiskato 20 vuoden päästä</li>
+                    </ul>
+                    <p><strong>Mekanismi:</strong> Pesuväli &mdash; poliittinen sykli on 4 vuotta, palautesykli 20&ndash;30 vuotta. Koska seuraukset ilmenevät vasta pesuvälin toisella puolella, nykyinen poliitikko ei joudu vastuuseen.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mikä on tämän päätöksen vaikutus vuonna 2050?&raquo;</li>
+                        <li>&laquo;Paljonko tämä maksaa vuoden 2040 veronmaksajalle?&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-7">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">7.</span>
+                    <span class="arg-claim">Kausaalinen pesu</span>
+                    <span class="arg-label">Pitkä ketju piilottaa vastuun</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Vastuu hämärretään luomalla pitkä kausaaliketju, jossa jokainen linkki voi väittää olevansa syytön lopputulokseen.</p>
+                    <p><strong>Mekanismi:</strong> Sen sijaan, että A &rarr; B (ministeri leikkaa &rarr; sairaala sulkeutuu), luodaan ketju A &rarr; X &rarr; Y &rarr; Z &rarr; B: ministeri muuttaa rahoituskaavaa &rarr; allokaatio siirtyy &rarr; sairaalan budjetti pienenee &rarr; laatu heikkenee &rarr; potilaat lähtevät &rarr; sairaala ei ole kannattava &rarr; sairaala sulkeutuu. Jokainen välivaihe on puolustettavissa erikseen. Kukaan ei &laquo;sulkenut sairaalaa&raquo; &mdash; se vain &laquo;tapahtui&raquo;.</p>
+                    <p><strong>Miksi se toimii:</strong> Pitkä kausaaliketju tekee täyslaskennasta vaikeaa <em>kaikille</em> &mdash; myös kriitikoille ja analyytikoille. Kun vaikutukset leviävät verkon läpi (X vaikuttaa Y:hyn, Y vaikuttaa Z:aan, Z vaikuttaa W:hen...), kokonaisvaikutuksen jäljittäminen ylittää kognitiivisen kapasiteetin. Tämä ei ole vain kannattajien ongelma; se on episteeminen rajoitus. Juuri siksi kausaalinen pesu on niin tehokas: kukaan ei voi todistaa yhteyttä.</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li>&laquo;Kolmikanta päätti&raquo; &mdash; kausaaliketju: hallitus &rarr; työmarkkinajärjestöt &rarr; neuvottelut &rarr; kompromissi &rarr; päätös. Kuka tarkalleen?</li>
+                        <li>Sote-uudistus: valtio &rarr; hyvinvointialue &rarr; palveluntuottaja &rarr; alihankkija. Kun hoito epäonnistuu, ketju on liian pitkä vastuun kohdentamiseen.</li>
+                    </ul>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Piirrä kausaaliketju. Kuka teki ensimmäisen siirron?&raquo;</li>
+                        <li>&laquo;Jos tämä epäonnistuu, kenen ura kärsii?&raquo;</li>
+                        <li>&laquo;Kuka olisi voinut estää tämän ja milloin?&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-8">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">8.</span>
+                    <span class="arg-claim">Vastuunpesu</span>
+                    <span class="arg-label">Vastuu ulkoistettu konsultille</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Vastuu ulkoistetaan konsulteille tai selvitysmiehille.</p>
+                    <p><strong>Mekanismi:</strong> Kun ministeri tilaa &laquo;riippumattoman selvityksen&raquo;, hän ostaa kilven. Jos hanke epäonnistuu, vika oli &laquo;laskelmissa&raquo;.</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li>McKinsey-selvitykset, joiden mallit ovat &laquo;liikesalaisuuksia&raquo;</li>
+                        <li>&laquo;Asiantuntijat suosittelivat&raquo; &mdash; ketkä asiantuntijat? Millä perusteilla?</li>
+                    </ul>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Kuka tilasi selvityksen? Kuka maksoi?&raquo;</li>
+                        <li>&laquo;Ovatko laskelmat julkisia? Voinko ajaa ne itse?&raquo;</li>
+                        <li>&laquo;Mikä on tilaajan vastuu jos selvitys on väärässä?&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- III. Huomion ja ajan manipulaatio -->
+    <div class="arg-section">
+        <h3 class="section-label">III. Huomion ja ajan manipulaatio</h3>
+
+        <div class="arg-card" id="arg-9">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">9.</span>
+                    <span class="arg-claim">Huomionpesu</span>
+                    <span class="arg-label">Käsitellään kunnes unohtuu</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Asia &laquo;käsitellään&raquo; niin kauan, että alkuperäinen valitus unohtuu.</p>
+                    <p><strong>Mekanismi:</strong> Hyödyntää ihmisen rajallista muistikapasiteettia. Ongelma laajenee ajassa kunnes valitukset loppuvat &mdash; ei kunnes ongelma on ratkaistu.</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li>Parlamentaariset komiteat, jotka kestävät vuosikymmeniä</li>
+                        <li>&laquo;Selvitetään lisää&raquo; &mdash; kunnes kriitikot väsyvät</li>
+                        <li>Lausuntokierroksia, kunnes keskustelu hajoaa</li>
+                    </ul>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mikä on takaraja?&raquo;</li>
+                        <li>&laquo;Mitä tapahtuu jos selvitys ei valmistu?&raquo;</li>
+                        <li>Aseta muistutus: palaa asiaan 6 kk päästä ja kysy tuloksia.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-10">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">10.</span>
+                    <span class="arg-claim">Selvitysvalta</span>
+                    <span class="arg-label">Selvitys korvaa päätöksen</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Vallankäytön muoto, jossa päätöksenteko korvataan &laquo;selvittämisellä&raquo;.</p>
+                    <p>Selvitys ei ole enää esivaihe päätökselle &mdash; se on päätöksen korvike.</p>
+                    <p>Työryhmä on poliittinen pakastin.</p>
+                    <p><strong>Esimerkki: Sosiaaliturva</strong></p>
+                    <table>
+                        <tr><th>Vuosi / Hanke</th><th>Tulos</th></tr>
+                        <tr><td>2007: Sata-komitea</td><td>Ei rakenteellista muutosta</td></tr>
+                        <tr><td>2018: Toimi-hanke</td><td>Ei rakenteellista muutosta</td></tr>
+                        <tr><td>2020&ndash;2027: Sosiaaliturvakomitea</td><td>Kesken</td></tr>
+                    </table>
+                    <p>Kaksi vuosikymmentä, kolme hanketta, nolla rakenteellista muutosta.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Onko tämä selvitys vai päätös?&raquo;</li>
+                        <li>&laquo;Mitä tapahtuu jos työryhmä ei pääse yksimielisyyteen?&raquo;</li>
+                        <li>&laquo;Mikä on selvityksen sitovuus?&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IV. Aseistettu läpinäkymättömyys -->
+    <div class="arg-section">
+        <h3 class="section-label">IV. Aseistettu läpinäkymättömyys</h3>
+
+        <div class="arg-card" id="arg-11">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">11.</span>
+                    <span class="arg-claim">Luettamattomuuskilpi</span>
+                    <span class="arg-label">Läpinäkyvyyden inversio</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Strateginen läpinäkyvyyden inversio. Valtio näkee kansalaisen (verotiedot, rekisterit, valvonta), mutta kansalainen ei näe valtiota. Tieto tuotetaan muodossa, joka on teknisesti saatavilla, mutta käytännössä käsittämätön.</p>
+                    <p><strong>Kuusi mekanismia:</strong></p>
+                    <table>
+                        <tr><th>Mekanismi</th><th>Miten toimii &mdash; esimerkki</th></tr>
+                        <tr><td>Volyymi</td><td>Olennainen hukkuu massaan. <em>500-sivuinen raportti, jossa 3 lausetta ratkaisee.</em></td></tr>
+                        <tr><td>Ristiviittaukset</td><td>Ymmärtäminen vaatii 50 muun dokumentin lukemista. <em>Laki viittaa 47 muuhun lakiin.</em></td></tr>
+                        <tr><td>Jargon</td><td>Termit, joita vain sisäpiiri ymmärtää. <em>Konsulttikieli, lakikieli, virkakieli.</em></td></tr>
+                        <tr><td>Hautaaminen</td><td>Kriittinen tieto piilossa. <em>Oleelliset luvut liitteessä T, taulukossa 47.</em></td></tr>
+                        <tr><td>Liikesalaisuus</td><td>Julkisen päätöksen perusteet salataan. <em>&laquo;Mallin yksityiskohdat ovat luottamuksellisia.&raquo;</em></td></tr>
+                        <tr><td>Fragmentointi</td><td>Kokonaiskuva hajautettu. <em>Kukaan ei tiedä, mikä ministeriö vastaa mistäkin.</em></td></tr>
+                    </table>
+                    <p><strong>Ero monimutkaisuuspesusta:</strong> Monimutkaisuuspesu luo monimutkaisuutta <strong>maastoon</strong> &mdash; järjestelmä on oikeasti monimutkainen. Luettamattomuuskilpi luo monimutkaisuutta <strong>karttaan</strong> &mdash; esitystapaan. Yksinkertainen totuus voidaan piilottaa 500-sivuiseen raporttiin.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <table>
+                        <tr><th>Mekanismi</th><th>Vastakysymys</th></tr>
+                        <tr><td>Volyymi</td><td>&laquo;Missä on yhteenveto, josta näen olennaiset luvut?&raquo;</td></tr>
+                        <tr><td>Ristiviittaukset</td><td>&laquo;Selitä tämä niin kuin selittäisit 15-vuotiaalle.&raquo;</td></tr>
+                        <tr><td>Jargon</td><td>&laquo;Mitä tämä tarkoittaa käytännössä?&raquo;</td></tr>
+                        <tr><td>Hautaaminen</td><td>&laquo;Mitkä ovat tärkeimmät kolme lukua?&raquo;</td></tr>
+                        <tr><td>Liikesalaisuus</td><td>&laquo;Ovatko laskelmat julkisia? Voinko ajaa ne itse?&raquo;</td></tr>
+                        <tr><td>Fragmentointi</td><td>&laquo;Kuka omistaa tämän ongelman kokonaisuutena?&raquo;</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- V. Passiivikieli ja toimijuuden häivyttäminen -->
+    <div class="arg-section">
+        <h3 class="section-label">V. Passiivikieli ja toimijuuden häivyttäminen</h3>
+
+        <div class="arg-card" id="arg-12">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">12.</span>
+                    <span class="arg-claim">Passiivi</span>
+                    <span class="arg-label">Toimija piilotettu</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Kieliopillinen rakenne, joka piilottaa toimijan.</p>
+                    <p>Passiivi muuttaa poliittisen valinnan luonnonvoimaksi. Kun &laquo;leikkauksia joudutaan tekemään&raquo;, ei ole ketään syyttää &mdash; vain abstrakti pakko.</p>
+                    <table>
+                        <tr><th>Passiivi</th><th>Aktiivi</th></tr>
+                        <tr><td>&laquo;Päätös tehtiin&raquo;</td><td>Ministeri X teki päätöksen</td></tr>
+                        <tr><td>&laquo;Virheitä on tapahtunut&raquo;</td><td>Virkamies Y teki virheen</td></tr>
+                        <tr><td>&laquo;Sopeutusta tarvitaan&raquo;</td><td>Hallitus leikkaa X miljoonaa</td></tr>
+                        <tr><td>&laquo;Leikkauksia joudutaan tekemään&raquo;</td><td>Ministeri Z päättää leikata</td></tr>
+                        <tr><td>&laquo;Resurssit kohdennetaan&raquo;</td><td>Ministeriö siirtää X euroa</td></tr>
+                    </table>
+                    <p><strong>Insinöörivaltion sääntö:</strong> Jokaisessa velvoitteessa on oltava nimetty toimija.</p>
+                    <p><em>Nykyaikainen versio passiivista on algoritminen vastuupako: &laquo;Järjestelmä teki päätöksen.&raquo; Tässä tekijää ei ole piilotettu kieliopillisesti, vaan se on ulkoistettu koodille, jota kukaan ei valvo.</em></p>
+                    <p><strong>Yhdistelmä: Epämääräisyys + Passiivi = Vastuunpesu</strong></p>
+                    <table>
+                        <tr><th>Vastuunpesu</th><th>Vastuu</th></tr>
+                        <tr><td>&laquo;Asiaa on selvitetty riittävästi&raquo;</td><td>Kuka selvitti? Mikä oli tulos? Riittävästi mihin?</td></tr>
+                        <tr><td>&laquo;Palveluja kehitetään tarpeiden mukaan&raquo;</td><td>Kuka kehittää? Mitkä tarpeet? Milloin valmis?</td></tr>
+                        <tr><td>&laquo;Yhteistyötä tiivistetään&raquo;</td><td>Ketkä? Miten? Mikä on mittari?</td></tr>
+                    </table>
+                    <p><strong>Tekijänpyyhintä:</strong> Passiivi ei ole vain huonoa tyyliä &mdash; se on vallankäytön muoto. Kun kieltä käytetään häivyttämään toimijuus ja syy-yhteys, kohde (kansalainen, potilas, veronmaksaja) ei voi kohdistaa kritiikkiään kehenkään. Tämä on tekijänpyyhintää.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <p>Kun kuulet passiivia, suorita välitön <strong>purkaminen</strong>. Älä anna sumun laskeutua kognitiiviseen järjestelmääsi.</p>
+                    <table>
+                        <tr><th>Järjestelmän syöte (Passiivi)</th><th>Purkaminen (Aktiivi)</th></tr>
+                        <tr><td>&laquo;Kustannuspaineita on kertynyt&raquo;</td><td>&laquo;Olemme kuluttaneet enemmän kuin olemme tuottaneet&raquo;</td></tr>
+                        <tr><td>&laquo;Resurssit on kohdennettu uudelleen&raquo;</td><td>&laquo;Päätimme ottaa rahat pois kohteesta A ja antaa ne B:lle&raquo;</td></tr>
+                        <tr><td>&laquo;On tehty vaikeita päätöksiä&raquo;</td><td>&laquo;Henkilö X valitsi vaihtoehdon Y tietäen sen seuraukset&raquo;</td></tr>
+                        <tr><td>&laquo;Suunta on vakiintunut&raquo;</td><td>&laquo;Emme kykene muuttamaan kurssia&raquo;</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-13">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">13.</span>
+                    <span class="arg-claim">Nominisointi (Zombisubstantiivi)</span>
+                    <span class="arg-label">Kuollut verbi</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Verbien muuttaminen substantiiveiksi, mikä piilottaa toimijan ja prosessin. George Orwell tunnisti tämän jo 1946: poliittinen kieli on suunniteltu tekemään valheista totuudenkuuloisia ja murhasta kunnioitettavaa. Zombisubstantiivi on substantiivi, joka on kuollut verbi &mdash; sana, joka kerran sisälsi toimijan ja ajan, mutta joka on jähmettynyt asiaksi.</p>
+                    <table>
+                        <tr><th>Verbi (elävä)</th><th>Substantiivi (zombi)</th></tr>
+                        <tr><td>&laquo;Me päätämme&raquo;</td><td>&laquo;Päätös&raquo;</td></tr>
+                        <tr><td>&laquo;Hallitus leikkaa&raquo;</td><td>&laquo;Sopeutus&raquo;</td></tr>
+                        <tr><td>&laquo;Ministeriö valmistelee&raquo;</td><td>&laquo;Valmistelu&raquo;</td></tr>
+                        <tr><td>&laquo;Ihmiset kärsivät&raquo;</td><td>&laquo;Kärsimys&raquo;</td></tr>
+                    </table>
+                    <p><strong>Mekanismi:</strong> Kun verbi muuttuu substantiiviksi, toimija katoaa ja prosessi jähmettyy asiaksi. &laquo;Sopeutus&raquo; kuulostaa luonnonvoimalta; &laquo;hallitus leikkaa&raquo; kuulostaa valinnalta. Zombisubstantiivi on passiivin vahvempi muoto: passiivi piilottaa toimijan kieliopillisesti, zombisubstantiivi piilottaa koko toiminnan olemassaolon.</p>
+                    <p><strong>Tunnistaminen:</strong> Kun kuulet &laquo;tapahtuu&raquo;, &laquo;ilmenee&raquo;, &laquo;syntyy&raquo; &mdash; käännä takaisin verbiksi. Kuka tekee? Milloin? Kenelle?</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>Käännä substantiivi takaisin verbiksi</li>
+                        <li>&laquo;Kuka sopeutuu? Mihin? Miksi?&raquo;</li>
+                        <li>Vaadi aktiivista verbiä ja nimettyä toimijaa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-14">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">14.</span>
+                    <span class="arg-claim">Pakkoretoriikka</span>
+                    <span class="arg-label">Valinta naamioituna pakkona</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Poliittisten valintojen esittäminen välttämättömyyksinä.</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li>&laquo;Pakko&raquo; &mdash; pakko kenelle? Kuka määritteli pakon?</li>
+                        <li>&laquo;Ei ole vaihtoehtoja&raquo; (TINA &ndash; There Is No Alternative)</li>
+                        <li>&laquo;Olosuhteet vaativat&raquo;</li>
+                        <li>&laquo;Rakenteelliset paineet&raquo;</li>
+                    </ul>
+                    <p><strong>Mekanismi:</strong> Poliittinen valinta naamioidaan fysiikan laiksi. Jos &laquo;pakko&raquo;, ei ole vastuuta. Jos &laquo;valinta&raquo;, on vastuussa.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mitä tapahtuu, jos emme tee tätä?&raquo;</li>
+                        <li>&laquo;Mitkä ovat vaihtoehdot, joita ei esitetty?&raquo;</li>
+                        <li>&laquo;Kuka hyötyy siitä, että tämä esitetään välttämättömyytenä?&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VI. Symbolien kaappaus -->
+    <div class="arg-section">
+        <h3 class="section-label">VI. Symbolien kaappaus</h3>
+
+        <div class="arg-card" id="arg-15">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">15.</span>
+                    <span class="arg-claim">ROP-hyökkäys</span>
+                    <span class="arg-label">Symboli kaapattu</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Legitiimin symbolin käyttäminen sen alkuperäistä tarkoitusta vastaan.</p>
+                    <p>Nimi tulee ohjelmoinnista. Return-Oriented Programming -hyökkäyksessä hyökkääjä ei kirjoita uutta koodia &mdash; hän yhdistelee olemassa olevan ohjelman palasia saadakseen aikaan haluamansa toiminnon.</p>
+                    <p>Sama logiikka: käytä olemassa olevaa legitimiteettiä saadaksesi läpi jotain, mitä et saisi läpi suoraan.</p>
+                    <p><strong>Mekanismi:</strong> Symbolin alkuperäinen voima säilyy, mutta sitä käytetään uuteen tarkoitukseen. Kriitikko, joka vastustaa käyttöä, näyttää vastustavan itse symbolia.</p>
+                    <table>
+                        <tr><th>Symboli</th><th>Alkuperäinen tarkoitus &rarr; ROP-käyttö</th></tr>
+                        <tr><td>&laquo;Demokratia&raquo;</td><td>Kansanvalta &rarr; <em>päätösten oikeuttaminen, joita kansa ei tue</em></td></tr>
+                        <tr><td>&laquo;Ihmisoikeudet&raquo;</td><td>Yksilön suoja valtiota vastaan &rarr; <em>kansallisen suvereniteetin rajoittaminen</em></td></tr>
+                        <tr><td>&laquo;Tiede&raquo;</td><td>Totuuden etsintä &rarr; <em>poliittisten tavoitteiden legitimointi</em></td></tr>
+                        <tr><td>&laquo;Turvallisuus&raquo;</td><td>Kansalaisten suojelu &rarr; <em>valvonnan oikeuttaminen</em></td></tr>
+                        <tr><td>&laquo;Tasa-arvo&raquo;</td><td>Yhtäläiset mahdollisuudet &rarr; <em>lopputulosten tasoittaminen</em></td></tr>
+                    </table>
+                    <p>&laquo;Vastustatko demokratiaa?&raquo; &mdash; kun todellisuudessa vastustat tiettyä päätöstä, joka tehtiin demokratian nimissä.</p>
+                    <p><strong>Tyypillinen esimerkki:</strong> Kun kuulet &laquo;Tämä on tieteen vastaista&raquo;, kysy: Viitataanko tieteelliseen <em>metodiin</em> (falsifiointiin, toistettavuuteen) vai &laquo;Tieteeseen&raquo; <em>instituutiona</em> (auktoriteettiin, konsensukseen)? ROP-hyökkäys käyttää auktoriteettia (&laquo;Tiede sanoo&raquo;) estääkseen metodin (kyseenalaistamisen).</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mitä tämä sana tarkoitti alun perin? Mitä se tarkoittaa nyt?&raquo;</li>
+                        <li>&laquo;Onko käyttö linjassa alkuperäisen tarkoituksen kanssa?&raquo;</li>
+                        <li>&laquo;Kuka hyötyy siitä, että tätä sanaa käytetään näin?&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-16">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">16.</span>
+                    <span class="arg-claim">Kehystysmanipulaatio</span>
+                    <span class="arg-label">Vaihtoehdot esivalittu</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Vaihtoehtojen esivalinta ennen keskustelun alkua.</p>
+                    <p><strong>Esimerkkejä:</strong></p>
+                    <ul>
+                        <li>&laquo;Vaihtoehdot ovat A ja B&raquo; &mdash; entä C, D, E?</li>
+                        <li>&laquo;Kannatatteko lisää rahaa vai enemmän henkilöstöä?&raquo; &mdash; entä rakennemuutos?</li>
+                        <li>Kansanäänestyksen kysymyksen muotoilu</li>
+                    </ul>
+                    <p><strong>Mekanismi:</strong> Esivalinta on piilotettua vallankäyttöä. Kun kehys on asetettu, keskustelu tapahtuu kehyksen sisällä.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mitä vaihtoehtoja ei esitetty?&raquo;</li>
+                        <li>&laquo;Kuka asetti nämä vaihtoehdot?&raquo;</li>
+                        <li>&laquo;Onko kysymys oikein muotoiltu?&raquo;</li>
+                        <li>Vaadi karttaa: näytä kaikki vaihtoehdot ennen kuin valitset.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VII. Tunnekieli ja moraalinen suojaus -->
+    <div class="arg-section">
+        <h3 class="section-label">VII. Tunnekieli ja moraalinen suojaus</h3>
+
+        <div class="arg-card" id="arg-17">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">17.</span>
+                    <span class="arg-claim">Empatia-ansa</span>
+                    <span class="arg-label">Tunne hiljentää kritiikin</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Moraalinen suojamuuri, joka hiljentää järjestelmäkritiikin.</p>
+                    <p><strong>Mekanismi:</strong> Kun osoitat järjestelmän olevan rikki, vastaus on: &laquo;Mutta meillä on arvot. Meidän on huolehdittava heikoimmista.&raquo; Tämä kääntää keskustelun rakenteista tunteisiin.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Aito huolehtiminen vaatii toimivia rakenteita.&raquo;</li>
+                        <li>&laquo;Jos 60&nbsp;% veroeurosta häviää kitkaan, se ei ole huolehtimista &mdash; se on tuhlausta.&raquo;</li>
+                        <li>&laquo;Tehokkuus on moraalia: jokainen hukattu euro on hoitamatta jäänyt potilas.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-18">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">18.</span>
+                    <span class="arg-claim">Hyvepesu</span>
+                    <span class="arg-label">Haitta naamioituna hyveenä</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Haitallinen politiikka naamioidaan hyveelliseksi.</p>
+                    <ul>
+                        <li>&laquo;Tulevien sukupolvien puolesta&raquo; &mdash; samalla kun syödään heidän pääomaansa.</li>
+                        <li>&laquo;Tasa-arvo&raquo; &mdash; samalla kun tuotetaan uusia hierarkioita.</li>
+                        <li>&laquo;Kestävyys&raquo; &mdash; samalla kun siirretään kustannuksia tulevaisuuteen.</li>
+                    </ul>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mitkä ovat todelliset tulokset, ei tarkoitukset?&raquo;</li>
+                        <li>&laquo;Kuka hyötyy? Kuka maksaa?&raquo;</li>
+                        <li>&laquo;Näytä mittari, älä kerro tarinaa.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIII. Episteeminen suojaus -->
+    <div class="arg-section">
+        <h3 class="section-label">VIII. Episteeminen suojaus</h3>
+        <p style="margin-bottom:1rem; color:var(--text-dim); font-size:0.92rem;">Mekanismit, joilla rikkinäiset teoriat suojaavat itseään todellisuudelta.</p>
+
+        <div class="arg-card" id="arg-19">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">19.</span>
+                    <span class="arg-claim">Panosharha</span>
+                    <span class="arg-label">Lisää rahaa = paremmat tulokset?</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Väite:</strong> &laquo;Lisäämme rahoitusta, joten tulokset paranevat.&raquo;</p>
+                    <p><strong>Määritelmä:</strong> Musta laatikko -ajattelu. Oletetaan maagisesti, että <em>panos</em> (raha) muuttuu <em>tuotokseksi</em> ilman, että määritellään sitä <em>mekanismia</em>, joka tekee muunnoksen.</p>
+                    <p><strong>Mekanismi:</strong> Jos moottori on rikki, bensiinin lisääminen ei korjaa autoa &mdash; se polttaa auton nopeammin. Sama pätee järjestelmiin: jos prosessi on viallinen, resurssien lisääminen vain nopeuttaa tuhlaamista.</p>
+                    <p><strong>Esimerkki:</strong> Sote: miljardeja kaadettiin, jonot kasvoivat. Diagnoosi: &laquo;Rahaa puuttui.&raquo; Todellisuus: prosessi tuhlasi rahaa.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Älä kerro budjetista. Kerro transmissiomekanismista.&raquo;</li>
+                        <li>&laquo;Miten tämä euro muuttuu tulokseksi? Jos mekanismia ei ole kuvattu, tämä on toiveajattelua.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-20">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">20.</span>
+                    <span class="arg-claim">Latenssisokeus</span>
+                    <span class="arg-label">Aikavakion väärinkäyttö</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Väite:</strong> &laquo;Tulokset eivät näy vielä. Pitää antaa aikaa.&raquo;</p>
+                    <p><strong>Määritelmä:</strong> Aikavakion väärinkäyttö vastuun välttämiseksi. Sivilisaation ohjaus on kuin avaruusmissio: kun päätös on &laquo;laukaistu&raquo;, olet sitoutunut &mdash; ja seuraava korjausmahdollisuus on vuosikymmenten päässä.</p>
+                    <p><strong>Mekanismi:</strong> &laquo;Odotamme dataa&raquo; kuulostaa tieteelliseltä, mutta se on vastuunpakoilua. Jos mekanismianalyysi on tehty kunnolla <em>ennen</em> päätöstä, tiedät mitä odottaa. Et tarvitse 20 vuoden dataa nähdäksesi, toimiiko jokin &mdash; kausaaliketju joko on ehjä tai ei ole.</p>
+                    <p><strong>Esimerkki:</strong> Integraatio, velan taittuminen kasvulla, koulutusuudistukset &mdash; kaikki käyttävät aikaa verhona. Mutta mekanismianalyysi olisi ennustanut ongelmat etukäteen: kannustinrakenne X tuottaa käyttäytymisen Y, joka tuottaa tuloksen Z. Jos X on paikoillaan ja Y näkyy, Z on tulossa &mdash; riippumatta siitä, onko Z vielä &laquo;datassa&raquo;.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mikä on kausaalimalli? Mitä mekanismi ennustaa?&raquo;</li>
+                        <li>&laquo;Jos malli ennusti A ja näemme B, malli on väärä &mdash; älä odota lisää dataa, korjaa malli.&raquo;</li>
+                        <li>&laquo;Täyslaskenta tehdään ennen laukaisua, ei sen jälkeen. Avaruusmissiossa ei debugata lennon aikana.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-21">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">21.</span>
+                    <span class="arg-claim">Mallisokeus</span>
+                    <span class="arg-label">Tarkka mutta epätosi</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Väite:</strong> &laquo;Laskelmiemme mukaan tämä säästää X miljoonaa.&raquo;</p>
+                    <p><strong>Määritelmä:</strong> Sokeus mallin oletuksille. Malli voi olla matemaattisesti oikein, mutta sen aksioomat ovat toiveajattelua.</p>
+                    <p><strong>Mekanismi:</strong> Oletetaan &laquo;ceteris paribus&raquo; (muut asiat pysyvät ennallaan), vaikka päätös itsessään muuttaa kulttuuria, kannustimia tai luottamusta. Malli on tarkka, mutta epätosi.</p>
+                    <p><strong>Esimerkki:</strong> Sote-laskelmat olettivat, että tietojärjestelmät &laquo;yhtenäistyvät&raquo; itsestään. Sivuutettiin IT-hankkeiden entropia ja integraation todellinen hinta.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Älä näytä minulle tulosta, näytä oletukset.&raquo;</li>
+                        <li>&laquo;Mitä oletatte ihmisten käyttäytymisestä? Millä datalla tämä oletus on validoitu?&raquo;</li>
+                        <li>&laquo;Jos malli on sokea omille reunaehdoilleen, se on toive.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-22">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">22.</span>
+                    <span class="arg-claim">Puhtaus-argumentti</span>
+                    <span class="arg-label">No True Scotsman</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Väite:</strong> &laquo;Tämä ei toiminut, koska sitä ei toteutettu tarpeeksi puhtaasti / se ei ollut aitoa [ideologiaa].&raquo;</p>
+                    <p><strong>Määritelmä:</strong> Teoria suojataan kritiikiltä syyttämällä epätäydellistä toteutusta (No True Scotsman).</p>
+                    <p><strong>Mekanismi:</strong> Tekee päätöksentekijästä immuunin virheille. Epäonnistuminen ei ole teorian vika, vaan toteutuksen. Vastuullisuus hajoaa.</p>
+                    <p><strong>Esimerkki:</strong> &laquo;Ei ollut aitoa kommunismia.&raquo; &laquo;Ei ollut aitoa markkinataloutta.&raquo; &laquo;Ei ollut aitoa sote-mallia.&raquo;</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mekanismin pitää toimia nykyisillä ihmisillä ja nykyisellä todellisuudella.&raquo;</li>
+                        <li>&laquo;Jos malli vaatii ideaaliolosuhteet, se on utopia, ei suunnitelma.&raquo;</li>
+                        <li>&laquo;Johtaja vastaa tuloksesta, ei aikomuksesta.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IX. Toivelista-hallinto -->
+    <div class="arg-section">
+        <h3 class="section-label">IX. Toivelista-hallinto</h3>
+
+        <div class="arg-card" id="arg-23">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">23.</span>
+                    <span class="arg-claim">Toivelista-perustuslaki</span>
+                    <span class="arg-label">Toive, ei koodi</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Perustuslaki, joka toimii toivelistana eikä sitovana koodina.</p>
+                    <p><strong>Ominaisuudet:</strong></p>
+                    <ul>
+                        <li>Ei eksplisiittistä hierarkiaa (kumpi oikeus voittaa ristiriidassa?)</li>
+                        <li>Ei konfliktinratkaisumekanismia (ei perustuslakituomioistuinta)</li>
+                        <li>Ei täytäntöönpanoprotokollaa (mitään ei tapahdu automaattisesti)</li>
+                    </ul>
+                    <p><strong>Mekanismi:</strong> Lopputulokset riippuvat sosiaalisesta konsensuksesta, ei koodista.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Mitä tapahtuu, kun kaksi oikeutta on ristiriidassa?&raquo;</li>
+                        <li>&laquo;Mikä on sanktiomekanismi, kun oikeutta loukataan?&raquo;</li>
+                        <li>&laquo;Onko tämä protokolla vai toive?&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- X. Suomen erityisongelmat -->
+    <div class="arg-section">
+        <h3 class="section-label">X. Suomen erityisongelmat</h3>
+
+        <div class="arg-card" id="arg-24">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">24.</span>
+                    <span class="arg-claim">Rakenteellinen tyhmyys</span>
+                    <span class="arg-label">Instituutio ei ymmärrä eikä tarvitse</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Instituution kyky olla ymmärtämättä asiakastaan &mdash; koska sen ei tarvitse.</p>
+                    <p><strong>Lähde:</strong> David Graeber (<em>The Utopia of Rules</em>): Byrokratia hallitsee uhkaamalla väkivallalla, mikä vapauttaa valtaa käyttävän osapuolen tulkitsemasta toisen näkökulmaa. Virkailijan ei tarvitse ymmärtää miksi yksinhuoltaja myöhästyi tapaamisesta &mdash; hänen tarvitsee vain tietää, onko rasti ruudussa.</p>
+                    <p><strong>Suomen erityispiirre:</strong> Korkea luottamus peittää rakenteellisen tyhmyyden. Järjestelmä näyttää &laquo;toimivalta&raquo; tilastoissa, mutta kohtaamisissa se on kyvytön empatiaan tai kontekstuaaliseen ymmärrykseen.</p>
+                    <p><strong>Mekanismi:</strong> Tulkintataakka siirtyy kokonaan asiakkaalle. Hänen on käännettävä elämänsä monimutkaisuus byrokratian pudotusvalikkoihin. Jos elämäntilanne ei sovi valmiisiin kategorioihin, hänestä tulee &laquo;näkymätön&raquo; &mdash; järjestelmälle lukukelvoton.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Ymmärtääkö virkailija tilanteeni vai täyttääkö vain lomaketta?&raquo;</li>
+                        <li>&laquo;Tarvitsen ihmisen, joka kuuntelee, en algoritmia.&raquo;</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="arg-card" id="arg-25">
+            <div class="arg-header" onclick="toggleArg(this)">
+                <div class="arg-header-text">
+                    <span class="arg-num">25.</span>
+                    <span class="arg-claim">Luottamusansa</span>
+                    <span class="arg-label">Luottamus estää korjauksen</span>
+                </div>
+                <span class="arg-toggle">+</span>
+            </div>
+            <div class="arg-body">
+                <div class="arg-vastaus">
+                    <p><strong>Määritelmä:</strong> Korkea institutionaalinen luottamus estää palautteen ja korjauksen.</p>
+                    <p><strong>Mekanismi Suomessa:</strong></p>
+                    <ol>
+                        <li>Suomalaiset luottavat viranomaisiin (korkeat luottamusmittarit)</li>
+                        <li>Kun kansalainen ei ymmärrä päätöstä tai ei saa palvelua, hän olettaa: &laquo;Minä tein jotain väärin&raquo;</li>
+                        <li>Hän ei valita, ei anna palautetta, ei vaadi muutosta</li>
+                        <li>Järjestelmä ei saa signaalia, että se on rikki</li>
+                        <li>Ongelma jatkuu</li>
+                    </ol>
+                    <p><strong>Paradoksi:</strong> Korkea luottamus, joka normaalisti on hyvä asia, muuttuu immuuniksi kritiikille. &laquo;Luottamusyhteiskunta&raquo; tarkoittaa myös yhteiskuntaa, jossa rakenteiden kritisoiminen tuntuu epäsosiaaliselta.</p>
+                    <p class="torjunta-label">Torjunta:</p>
+                    <ul>
+                        <li>&laquo;Syytänkö itseäni asiasta, joka on järjestelmän vika?&raquo;</li>
+                        <li>Palaute ei ole epäluottamusta &mdash; se on järjestelmän huoltoa.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- XI. Kognitiivinen työkalupakki -->
+    <div class="arg-section">
+        <h3 class="section-label">XI. Kognitiivinen työkalupakki</h3>
+
+        <h4 style="margin-bottom:1rem;">Yhteenvetotaulukko</h4>
+        <table class="summary-table">
+            <tr><th>Kuvio</th><th>Tunnistus &rarr; Vastakyky</th></tr>
+            <tr><td>Semanttinen tyhjiö</td><td>Lause ei tuota tarkistettavaa ennustetta &rarr; <em>&laquo;Mitä tämä tarkoittaa käytännössä?&raquo;</em></td></tr>
+            <tr><td>Semanttinen eroosio</td><td>Nimi säilyy, funktio on tyhjä &rarr; <em>&laquo;Mitä tämä tekee, ei mitä se on?&raquo;</em></td></tr>
+            <tr><td>Katteeton vaade</td><td>&laquo;Oikeus&raquo; ilman tuottajaa/täytäntöönpanoa &rarr; <em>&laquo;Kuka tuottaa? Millä mekanismilla?&raquo;</em></td></tr>
+            <tr><td>Zombilaki</td><td>Kuka/Mitä/Milloin/Seuraamus puuttuu &rarr; <em>Neljän elementin testi</em></td></tr>
+            <tr><td>Tilallinen pesu</td><td>Hyöty täällä, kustannus tuolla &rarr; <em>&laquo;Missä kustannus ilmenee?&raquo;</em></td></tr>
+            <tr><td>Ajallinen pesu</td><td>Hyöty nyt, kustannus myöhemmin &rarr; <em>&laquo;Mikä on vaikutus 2050?&raquo;</em></td></tr>
+            <tr><td>Kausaalinen pesu</td><td>Haitta syntyy pitkän ketjun kautta &rarr; <em>&laquo;Piirrä kausaaliketju.&raquo;</em></td></tr>
+            <tr><td>Vastuunpesu</td><td>Vastuu ulkoistetaan konsultille &rarr; <em>&laquo;Kuka maksaa, jos laskelma on väärässä?&raquo;</em></td></tr>
+            <tr><td>Huomionpesu</td><td>Asia &laquo;käsitellään&raquo; loputtomiin &rarr; <em>&laquo;Mikä on takaraja?&raquo;</em></td></tr>
+            <tr><td>Selvitysvalta</td><td>Selvitys korvaa päätöksen &rarr; <em>&laquo;Onko tämä selvitys vai päätös?&raquo;</em></td></tr>
+            <tr><td>Luettamattomuuskilpi</td><td>Tieto käsittämättömässä muodossa &rarr; <em>&laquo;Selitä 15-vuotiaalle.&raquo;</em></td></tr>
+            <tr><td>Passiivi</td><td>Ei toimijaa &rarr; <em>&laquo;Kuka tekee?&raquo;</em></td></tr>
+            <tr><td>Nominisointi</td><td>Verbi muuttuu substantiiviksi &rarr; <em>Käännä takaisin verbiksi</em></td></tr>
+            <tr><td>Pakkoretoriikka</td><td>&laquo;Ei ole vaihtoehtoja&raquo; &rarr; <em>&laquo;Mitä tapahtuu jos emme?&raquo;</em></td></tr>
+            <tr><td>ROP-hyökkäys</td><td>Symbolia käytetään vastoin alkuperää &rarr; <em>&laquo;Mitä tämä alun perin tarkoitti?&raquo;</em></td></tr>
+            <tr><td>Kehystysmanipulaatio</td><td>Vaihtoehdot on esivalittu &rarr; <em>&laquo;Mitä ei esitetty?&raquo;</em></td></tr>
+            <tr><td>Empatia-ansa</td><td>Kritiikki kääntyy moraalittomuudeksi &rarr; <em>&laquo;Tehokkuus on moraalia.&raquo;</em></td></tr>
+            <tr><td>Hyvepesu</td><td>Haitta naamioidaan hyveeksi &rarr; <em>&laquo;Näytä mittari, älä tarinaa.&raquo;</em></td></tr>
+            <tr><td>Toivelista-perustuslaki</td><td>Oikeudet ilman hierarkiaa/täytäntöönpanoa &rarr; <em>&laquo;Onko tämä protokolla vai toive?&raquo;</em></td></tr>
+            <tr><td>Panosharha</td><td>Raha sisään = tulos ulos &rarr; <em>&laquo;Kerro transmissiomekanismi.&raquo;</em></td></tr>
+            <tr><td>Latenssisokeus</td><td>&laquo;Pitää antaa aikaa&raquo; &rarr; <em>&laquo;Mikä on kausaalimalli?&raquo;</em></td></tr>
+            <tr><td>Mallisokeus</td><td>&laquo;Laskelmat sanovat X&raquo; &rarr; <em>&laquo;Näytä oletukset.&raquo;</em></td></tr>
+            <tr><td>Puhtaus-argumentti</td><td>&laquo;Ei ollut aitoa X:ää&raquo; &rarr; <em>&laquo;Johtaja vastaa tuloksesta.&raquo;</em></td></tr>
+            <tr><td>Rakenteellinen tyhmyys</td><td>Instituutio ei ymmärrä, eikä tarvitse &rarr; <em>&laquo;Tarvitsen ihmisen, ei algoritmia.&raquo;</em></td></tr>
+            <tr><td>Luottamusansa</td><td>Syytät itseäsi järjestelmän viasta &rarr; <em>&laquo;Onko tämä minun vikani?&raquo;</em></td></tr>
+        </table>
+
+        <h4 style="margin-top:2rem; margin-bottom:1rem;">Käyttöohje</h4>
+        <p style="margin-bottom:0.5rem;">Kun luet uutista, kuuntelet poliitikkoa tai luet viranomaistekstiä:</p>
+        <ol style="margin:0.5rem 0 1rem 1.5rem;">
+            <li><strong>Tunnista tyhjiöt.</strong> Etsi lauseet, jotka eivät sitoudu mihinkään konkreettiseen.</li>
+            <li><strong>Etsi toimija.</strong> Kuka tekee? Kuka päättää? Kuka maksaa?</li>
+            <li><strong>Seuraa rahaa.</strong> Minne kustannus siirtyy &mdash; tilassa vai ajassa?</li>
+            <li><strong>Tarkista kehys.</strong> Mitä vaihtoehtoja ei esitetty?</li>
+            <li><strong>Kysy mekanismia.</strong> Mitä tarkalleen tapahtuu? Milloin? Millä mittarilla voin tarkistaa?</li>
+        </ol>
+    </div>
+
+    <!-- XII. Selkeys on sivilisaation huoltoa -->
+    <div class="arg-section">
+        <h3 class="section-label">XII. Selkeys on sivilisaation huoltoa</h3>
+
+        <div class="closing-section">
+            <p><strong>Koko ketju:</strong> Selkeä ajattelu &rarr; Selkeä kieli &rarr; Selkeä spesifikaatio &rarr; Auditoitava logiikka &rarr; Vastuullisuus &rarr; Toimivat instituutiot &rarr; Elinvoimaisuus.</p>
+
+            <p>Tämä ketju toimii molempiin suuntiin. Kun kieli on sumeaa, ajattelu sumentuu. Kun ajattelu on sumeaa, spesifikaatiot ovat epämääräisiä. Kun spesifikaatiot ovat epämääräisiä, logiikkaa ei voi auditoida. Kun logiikkaa ei voi auditoida, vastuuta ei voi kohdentaa. Kun vastuuta ei voi kohdentaa, instituutiot rapautuvat. Kun instituutiot rapautuvat, sivilisaatio kuolee.</p>
+
+            <p>Tämä kirja itsessään on ketjun tuote: selkeän ajattelun soveltamista hallintoon. MeV on instituutio, joka pakottaa ketjun toimimaan &mdash; se vaatii logiikan spesifiointia, mahdollistaa auditoinnin ja kohdentaa vastuun.</p>
+
+            <p>Useimmat virkamiehet eivät valehtele. He kirjoittavat, kuten heidät on opetettu kirjoittamaan. Ongelma ei ole pahuus &mdash; se on <em>osaamattomuus</em> ja <em>institutionaalinen paine</em>. Kukaan ei ole koskaan vaatinut selkeyttä, joten sitä ei ole opittu. Epämääräisyys suojaa, joten sitä tuotetaan.</p>
+
+            <p>Kun vaadit selkeyttä, et ole hankala. Olet sivilisaation <em>episteemisen infrastruktuurin huoltaja</em>.</p>
+
+            <p>Jokainen selkeä lause on korjattu bitti. Jokainen nimetty toimija on poistettu tyhjiö. Jokainen aikaraja on torjuttu pesu.</p>
+
+            <p><strong>Selkeä kieli on sivistyneen kansan tunnusmerkki.</strong></p>
+
+            <p>Kun kuulet semanttisen tyhjiön, kysy: <strong>&laquo;Mitä tämä tarkoittaa käytännössä?&raquo;</strong></p>
+
+            <p>Kun kuulet passiivin, kysy: <strong>&laquo;Kuka tekee?&raquo;</strong></p>
+
+            <p>Kun kuulet &laquo;asiaa selvitetään&raquo;, kysy: <strong>&laquo;Onko tämä selvitys vai päätös?&raquo;</strong></p>
+
+            <p>Nämä kysymykset ovat lahja, ei syytös. Ne opettavat selkeyttä niille, jotka haluavat oppia &mdash; ja paljastavat ne, jotka eivät halua.</p>
+
+            <p><em>MeV:n (Mekanismiviraston) ensimmäinen tehtävä ei ole leikata budjetteja, vaan leikata adjektiiveja. Kun kieli puhdistetaan, ongelmat paljastuvat. Vasta silloin ne voidaan korjata. Selkeä kieli on radikaalein teko, jonka voit tehdä.</em></p>
+
+            <p><em>Termien täsmälliset määritelmät: ks. <a href="sanakirja">Sanakirja</a>.</em></p>
+        </div>
+    </div>
+
+    <div class="cta-box">
+        <p style="margin-bottom:1rem; color:var(--text-dim);">Koko analyysi kirjassa.</p>
+    </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>CC-BY-NC-SA 4.0 &middot; Elias Kunnas &middot; etunimi at sukunimi piste com &middot; <a href="https://x.com/EliasKunnas">@EliasKunnas</a></p>
+</footer>
+
+<script>
+function toggleArg(header) {
+    var card = header.parentElement;
+    card.classList.toggle('open');
+}
+
+function toggleAll() {
+    var cards = document.querySelectorAll('.arg-card');
+    var anyOpen = false;
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].classList.contains('open')) {
+            anyOpen = true;
+            break;
+        }
+    }
+    for (var i = 0; i < cards.length; i++) {
+        if (anyOpen) {
+            cards[i].classList.remove('open');
+        } else {
+            cards[i].classList.add('open');
+        }
+    }
+}
+
+// Open card from URL hash (e.g. #5 opens concept 5)
+if (window.location.hash) {
+    var hash = window.location.hash.substring(1);
+    var target = document.getElementById('arg-' + hash);
+    if (!target) {
+        target = document.querySelector(window.location.hash);
+    }
+    if (target && target.classList.contains('arg-card')) {
+        target.classList.add('open');
+        setTimeout(function() { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
+    }
+}
+</script>
+
+</body>
+</html>

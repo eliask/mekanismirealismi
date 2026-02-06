@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selaa kirjan etuosaa | Mekanismirealismi</title>
+    <meta name="description" content="Selaa Mekanismirealismi-kirjan ensimmäisiä sivuja.">
+    <link rel="canonical" href="https://mekanismirealismi.fi/selaa">
+    <meta property="og:title" content="Selaa kirjan etuosaa — Mekanismirealismi">
+    <meta property="og:description" content="Selaa kirjan ensimmäiset sivut: kansi, sisällysluettelo ja prologi.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mekanismirealismi.fi/selaa">
+    <meta property="og:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <meta property="og:site_name" content="Mekanismirealismi">
+    <meta property="og:locale" content="fi_FI">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Selaa kirjan etuosaa — Mekanismirealismi">
+    <meta name="twitter:description" content="Selaa kirjan ensimmäiset sivut.">
+    <meta name="twitter:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e0e0e;
+            --text: #d8d4cf;
+            --text-dim: #908880;
+            --accent: #c86018;
+            --accent-dim: #a04810;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        .reader-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(14,14,14,0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #1e1e1e;
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .reader-header a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+        .reader-header a:hover { text-decoration: underline; }
+        .reader-header .title {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            letter-spacing: 0.3px;
+        }
+        .reader-header .page-indicator {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+        .pages {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 1rem 0 4rem;
+        }
+        .pages img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 2px;
+            background: #fff;
+        }
+        .end-card {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid #1e1e1e;
+            margin-top: 2rem;
+        }
+        .end-card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .end-card a {
+            display: inline-block;
+            padding: 0.7rem 1.8rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin: 0.3rem;
+            transition: background 0.15s, color 0.15s;
+        }
+        .end-card a:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+        @media (max-width: 740px) {
+            .pages { padding: 0 0 3rem; }
+            .pages img { margin-bottom: 1px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Selaa kirjan etuosaa",
+        "description": "Selaa Mekanismirealismi-kirjan ensimmäisiä sivuja.",
+        "url": "https://mekanismirealismi.fi/selaa",
+        "inLanguage": "fi"
+    }
+    </script>
+</head>
+<body>
+
+<div class="reader-header">
+    <a href="/">← Takaisin</a>
+    <span class="title">Mekanismirealismi — esikatselu</span>
+    <span class="page-indicator" id="pageNum"></span>
+</div>
+
+<div class="pages" id="pages">
+    <img src="assets/cover_front_1200.jpg" alt="Kansi" width="1200" height="1908">
+    <img src="assets/pages/page-004.jpg" alt="Sivu 4" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-005.jpg" alt="Sivu 5" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-006.jpg" alt="Sivu 6" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-007.jpg" alt="Sivu 7" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-008.jpg" alt="Sivu 8" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-009.jpg" alt="Sivu 9" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-010.jpg" alt="Sivu 10" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-011.jpg" alt="Sivu 11" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-012.jpg" alt="Sivu 12" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-013.jpg" alt="Sivu 13" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-014.jpg" alt="Sivu 14" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-015.jpg" alt="Sivu 15" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-016.jpg" alt="Sivu 16" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-017.jpg" alt="Sivu 17" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-018.jpg" alt="Sivu 18" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-019.jpg" alt="Sivu 19" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-020.jpg" alt="Sivu 20" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-021.jpg" alt="Sivu 21" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-022.jpg" alt="Sivu 22" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-023.jpg" alt="Sivu 23" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-024.jpg" alt="Sivu 24" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-025.jpg" alt="Sivu 25" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-026.jpg" alt="Sivu 26" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-027.jpg" alt="Sivu 27" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-028.jpg" alt="Sivu 28" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-029.jpg" alt="Sivu 29" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-030.jpg" alt="Sivu 30" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-031.jpg" alt="Sivu 31" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-032.jpg" alt="Sivu 32" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-033.jpg" alt="Sivu 33" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-034.jpg" alt="Sivu 34" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-035.jpg" alt="Sivu 35" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-036.jpg" alt="Sivu 36" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-037.jpg" alt="Sivu 37" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-038.jpg" alt="Sivu 38" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-039.jpg" alt="Sivu 39" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-040.jpg" alt="Sivu 40" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-041.jpg" alt="Sivu 41" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-042.jpg" alt="Sivu 42" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-043.jpg" alt="Sivu 43" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-044.jpg" alt="Sivu 44" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-045.jpg" alt="Sivu 45" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-046.jpg" alt="Sivu 46" loading="lazy" width="1595" height="2540">
+    <img src="assets/pages/page-047.jpg" alt="Sivu 47" loading="lazy" width="1595" height="2540">
+</div>
+
+<div class="end-card">
+    <p>Esikatselu päättyy. Kirjassa on 398 sivua.</p>
+    <a href="sisallys">Sisällysluettelo</a>
+    <a href="/">Etusivu</a>
+</div>
+
+<script>
+// Update page indicator on scroll
+const imgs = document.querySelectorAll('#pages img');
+const indicator = document.getElementById('pageNum');
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            const vh = window.innerHeight;
+            let current = 1;
+            for (let i = 0; i < imgs.length; i++) {
+                const rect = imgs[i].getBoundingClientRect();
+                if (rect.top < vh * 0.5) current = i + 1;
+            }
+            indicator.textContent = current + ' / ' + imgs.length;
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+// Initial
+indicator.textContent = '1 / ' + imgs.length;
+
+// Arrow key navigation
+window.addEventListener('keydown', (e) => {
+    if (['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft'].includes(e.key)) {
+        e.preventDefault();
+        const vh = window.innerHeight;
+        let currentIdx = 0;
+
+        // Find current active index based on midpoint (same logic as scroll listener)
+        for (let i = 0; i < imgs.length; i++) {
+            if (imgs[i].getBoundingClientRect().top < vh * 0.5) {
+                currentIdx = i;
+            }
+        }
+
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+            if (currentIdx < imgs.length - 1) {
+                imgs[currentIdx + 1].scrollIntoView({ behavior: 'smooth' });
+            }
+        } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            if (currentIdx > 0) {
+                imgs[currentIdx - 1].scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+});
+
+// Click navigation (left/right 30%)
+window.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG' && e.target.closest('#pages')) {
+        const rect = e.target.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const ratio = x / rect.width;
+        if (ratio < 0.3 || ratio > 0.7) {
+            const vh = window.innerHeight;
+            let currentIdx = 0;
+            for (let i = 0; i < imgs.length; i++) {
+                if (imgs[i].getBoundingClientRect().top < vh * 0.5) currentIdx = i;
+            }
+            if (ratio < 0.3 && currentIdx > 0) {
+                imgs[currentIdx - 1].scrollIntoView({ behavior: 'smooth' });
+            } else if (ratio > 0.7 && currentIdx < imgs.length - 1) {
+                imgs[currentIdx + 1].scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+});
+
+// Cursor feedback for range
+window.addEventListener('mousemove', (e) => {
+    const img = e.target.closest('#pages img');
+    if (img) {
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const ratio = x / rect.width;
+        img.style.cursor = (ratio < 0.3 || ratio > 0.7) ? 'pointer' : 'default';
+    }
+});
+</script>
+
+</body>
+</html>

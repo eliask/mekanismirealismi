@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mekanismivirasto (MeV) | Mekanismirealismi</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Kukaan ei mittaa toimivatko lait. MeV on puuttuva funktio: riippumaton virasto joka suunnittelee mekanismeja, tarkastaa lakiesitykset ja mittaa tuloksia.">
+    <meta name="keywords" content="mekanismivirasto, MeV, kannustinrakenteet, lainsäädäntö, vaikutusarviointi, mekanismisuunnittelu, institutional design">
+    <link rel="canonical" href="https://mekanismirealismi.fi/mekanismivirasto">
+    <link rel="alternate" hreflang="fi" href="https://mekanismirealismi.fi/mekanismivirasto">
+    <link rel="alternate" hreflang="en" href="https://mekanismirealismi.fi/mechanism-authority">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mekanismivirasto (MeV) — Institutionaalinen spesifikaatio">
+    <meta property="og:description" content="Kukaan ei mittaa toimivatko lait. MeV täyttää puuttuvan funktion: suunnittelee mekanismeja, tarkastaa lakiesitykset ja mittaa tuloksia.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mekanismirealismi.fi/mekanismivirasto">
+    <meta property="og:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <meta property="og:site_name" content="Mekanismirealismi">
+    <meta property="og:locale" content="fi_FI">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <meta name="twitter:title" content="Mekanismivirasto (MeV) — Institutionaalinen spesifikaatio">
+    <meta name="twitter:description" content="Kukaan ei mittaa toimivatko lait. MeV täyttää puuttuvan funktion.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Mekanismivirasto (MeV)",
+        "description": "Kukaan ei mittaa toimivatko lait. MeV on puuttuva funktio: riippumaton virasto joka suunnittelee mekanismeja, tarkastaa lakiesitykset ja mittaa tuloksia.",
+        "url": "https://mekanismirealismi.fi/mekanismivirasto",
+        "author": {
+            "@type": "Person",
+            "name": "Elias Kunnas"
+        },
+        "inLanguage": "fi"
+    }
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;">
+        <a class="logo" href="/">Mekanismirealismi</a>
+        <nav>
+            <a href="/">Etusivu</a>
+            <a href="argumentit">68 virhettä</a>
+            <a href="mekanismivirasto">MeV</a>
+            <a href="qa">Q&amp;A</a>
+            <a href="haku">Haku</a>
+            <a href="osta" style="border:1px solid var(--accent);color:var(--accent);padding:0.3rem 0.8rem;">Lue kirja</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <div class="essay-header">
+        <h1>Mekanismivirasto (MeV)</h1>
+        <p class="epigraph">Puuttuva funktio</p>
+    </div>
+
+    <div class="essay-body">
+
+        <section>
+            <h2>Ongelma</h2>
+            <p>Valtio toimii sokeasti: se säätää lakeja tietämättä, toimivatko ne käytännössä. Ministerit tekevät politiikkaa ja virkamiehet noudattavat prosessia, mutta kenenkään tehtävä ei ole mitata, tuottavatko mekanismit halutun lopputuloksen vai aiheuttavatko ne enemmän haittaa.</p>
+
+            <p><strong>Suomella on erinomainen diagnostiikkakoneisto ja olematon korjausmekanismi.</strong> VTV toteaa 6+ miljardia euroa hukkaan. EOA dokumentoi samat laittomuudet vuosikymmeneksi. OKa:n laittomiksi toteamat asetukset pysyvät Finlexissä 6+ vuotta. Kukaan ei voi pakottaa korjausta.</p>
+
+            <p>MeV on suunniteltu nimenomaan tämän aukon täyttämiseksi — ei uudeksi diagnoosielimeksi vaan pakottavaksi kytkennäksi diagnoosista korjaukseen.</p>
+        </section>
+
+        <section>
+            <h2>Spesifikaatio</h2>
+
+            <p>Tämä on institutionaalinen spesifikaatio Mekanismivirastolle — arkkitehtuurisuunnitelma, joka määrittelee viraston lakisääteisen tarkoituksen, riippumattomuuden ja toimivaltuudet. Kukin pykälä vastaa yhtä suunnittelupäätöstä, ja perustelut seuraavat jäljempänä.</p>
+
+            <h3>1 § Tarkoitus ja tehtävä</h3>
+            <p><strong>Toiminnan tarkoitus:</strong> Mekanismiviraston toiminnan ensisijainen tarkoitus on maksimoida suomalaisen yhteiskunnan pitkän aikavälin menestys ja elinvoima.</p>
+
+            <p><strong>Toteuttamiskeinot (Mandaatti):</strong> Tämän tarkoituksen toteuttamiseksi virasto valvoo, kehittää ja suunnittelee julkisen vallan käyttämiä ohjausmekanismeja — kuten lainsäädäntöä, rahoitusmalleja ja kannustinrakenteita — varmistaakseen niiden johdonmukaisuuden ja toimivuuden.</p>
+
+            <p><strong>Laaja-alaisuus:</strong> Viraston tehtävänä on tunnistaa ja raportoida myös sellaisista yhteiskunnan rakenteellisista esteistä tai uusista ilmiöistä, jotka vaarantavat toiminnan tarkoituksen toteutumisen, riippumatta siitä, kohdistuuko niihin nykyisellään julkista sääntelyä.</p>
+
+            <p>Viraston toimintaa ohjaa tavoite <strong>maksimoida</strong> yhteiskunnan kyky ylläpitää hyvinvointia ja toimintakykyä yli vaalikausien.</p>
+
+            <p>Tämän tavoitteen toteuttamiseksi virasto:</p>
+            <ul>
+                <li>Tukee ministeriöitä mekanismisuunnittelussa jo valmisteluvaiheessa</li>
+                <li>Tarkastaa lakiesitysten kannustinrakenteet ennen eduskuntakäsittelyä</li>
+                <li>Mittaa voimassa olevien mekanismien toteutuneita tuloksia suhteessa tavoitteisiin</li>
+                <li>Julkaisee analyysejä mekanismien toimivuudesta ja kansainvälisistä vertailuista</li>
+                <li>Seuraa järjestelmätason mittareita ja antaa hälytyksiä</li>
+                <li>Kehittää vaihtoehtoisia mekanismeja kun nykyiset epäonnistuvat</li>
+                <li>Integroi olemassa olevan tutkimuskapasiteetin (strategisen tutkimuksen neuvosto, Sitra) lainsäädäntöprosessiin — tutkimustieto ei saa jäädä irralliseksi raportiksi</li>
+                <li>Kehittää analyysimenetelmiään teknologisen kapasiteetin kasvaessa ja siirtää analyysifunktioita automaattisiin järjestelmiin kun laskennallinen mallinnus saavuttaa riittävän tarkkuuden</li>
+            </ul>
+
+            <h3>2 § Ennakoiva suunnittelu ja julkiset analyysit</h3>
+            <p>MeV toimii mekanismisuunnittelun osaamiskeskuksena:</p>
+            <ul>
+                <li><strong>Ennakoiva konsultointi:</strong> Ministeriöt voivat konsultoida MeV:tä valmistelun aikana, ennen hallituksen esityksen (HE) jättämistä. Konsultointi on luottamuksellista. Tavoite on tunnistaa ongelmat vaiheessa jossa korjaaminen on vielä helppoa.</li>
+                <li><strong>Mekanismisuunnittelu:</strong> MeV ei vain arvioi ehdotuksia vaan suunnittelee vaihtoehtoja. "Haluatte kannustaa X:ää ja välttää Y:tä? Tässä kolme mekanismia jotka tekevät sen. Vaihtoehto A toimii näin, hinta on tämä. B toimii toisin, hinta on tuo. Suosittelemme B:tä koska..."</li>
+                <li><strong>Mallintaminen:</strong> MeV mallintaa mekanismien todennäköisiä vaikutuksia ennen käyttöönottoa. Simulaatiot, peliteoreettinen analyysi, kansainväliset vertailut. "Jos otatte käyttöön tämän mallin, ennustamme näitä käyttäytymisvaikutuksia."</li>
+                <li><strong>Mekanismikirjasto:</strong> Julkinen tietokanta toimivista ja toimimattomista mekanismeista. Kansainväliset vertailut: miten muut maat ovat ratkaisseet vastaavan ongelman? Dokumentoidut virhemallit: näin epäonnistut.</li>
+                <li><strong>Sektorianalyysit:</strong> Säännölliset analyysit siitä, miten eri sektoreiden mekanismit toimivat — ja miten ne pitäisi suunnitella. "Miten terveydenhuollon rahoitus toimii? Miten julkisten hankintojen kilpailutus vaikuttaa laatuun? Missä kannustimet ovat rikki?"</li>
+                <li><strong>Jälkianalyysit:</strong> Kun merkittävä uudistus epäonnistuu, MeV laatii julkisen analyysin syistä ja vaihtoehtoisen suunnitelman. "Miksi SOTE epäonnistui? Miten se olisi pitänyt tehdä?" Tavoite on oppiminen, ei syyttely.</li>
+                <li><strong>Rakenneanalyysit:</strong> Päätöksenteon arkkitehtuurin analyysi: miten lait syntyvät, miten kannustimet vaikuttavat päätöksentekijöihin, ja mitkä rakenteet estävät tai mahdollistavat korjausliikkeitä. Kaikki rakenteet ovat mekanismeja ja siten analysoitavissa.</li>
+                <li><strong>Vaaliohjelmien auditointi (Hollannin malli):</strong> Ennen eduskuntavaaleja puolueet voivat vapaaehtoisesti alistaa vaaliohjelmansa MeV:n laskennalle. MeV arvioi ohjelmien taloudelliset ja dynaamiset vaikutukset yhtenäisellä mallilla — "mitä tämä lupaus maksaa ja mitä se tuottaa?". Tämä lopettaa "katteettomien lupausten" kulttuurin ja pakottaa puolueet rehellisyyteen. (Alankomaissa CPB:n "doorrekenen" on ollut käytössä vuosikymmeniä ja muuttanut poliittista kulttuuria.)</li>
+            </ul>
+
+            <h3>3 § Lakiesitysten ennakkotarkastus</h3>
+            <p>Kaikki hallituksen esitykset (HE) on alistettava MeV:n mekanismitarkastukseen ennen eduskuntakäsittelyä. Tarkastuksessa arvioidaan:</p>
+            <ul>
+                <li><strong>Kannustinrakenteet:</strong> Luoko laki tilanteen jossa on kannattavaa toimia lain tavoitetta vastaan?</li>
+                <li><strong>Peliteoreettinen kestävyys:</strong> Miten rationaaliset toimijat (yritykset, kansalaiset, viranomaiset) reagoivat sääntöön?</li>
+                <li><strong>Mittarin vääristyminen:</strong> Tuleeko mittarista tavoite joka vääristää toimintaa? (Goodhartin laki: "Kun mittarista tulee tavoite, se lakkaa olemasta hyvä mittari.")</li>
+                <li><strong>Järjestelmävaikutukset:</strong> Miten laki vaikuttaa muihin mekanismeihin ja kokonaisuuteen?</li>
+                <li><strong>Tulevaisuuskestävyys:</strong> Toimiiko mekanismi vielä kun olosuhteet muuttuvat? (Demografiset muutokset, teknologinen kehitys, taloudelliset shokit.)</li>
+            </ul>
+            <p>Tarkastus kohdistuu erityisesti merkittäviin hankkeisiin: yli 100 miljoonan euron vaikutus, rakenteelliset uudistukset tai järjestelmätason kannustinmuutokset. MeV ei ole velvollinen lausumaan vähäisistä säädösmuutoksista, mutta voi aina tehdä niin oman harkintansa mukaan.</p>
+            <p>MeV antaa jokaiselle merkittävälle HE:lle julkisen arvion mekanismin toimivuudesta ja riskeistä. Arvio ei estä lain säätämistä, mutta jos eduskunta säätää lain vastoin MeV:n julkista varoitusta, sen on hyväksyttävä <strong>ohitus-päätöslauselma</strong> jossa todetaan poikkeamisen syy. Päätöslauselma on julkinen ja jää osaksi lain valmistelumateriaalia.</p>
+
+            <h3>4 § Jatkuva valvonta</h3>
+            <p>MeV valvoo mekanismien toimivuutta koko niiden elinkaaren ajan:</p>
+            <ul>
+                <li><strong>Reaaliaikainen seuranta:</strong> Monitoroi mekanismien toteutusvaihetta. Tunnistaako ongelmat jo käyttöönotossa — ei vasta vuosien päästä jälkikäteisessä auditoinnissa? (Esimerkki: sote-uudistuksen IT-ongelmat ja perustuslailliset esteet havaittiin myöhään median toimesta, ei systemaattisen valvonnan kautta.)</li>
+                <li><strong>Tulosmittaus:</strong> Vertaa toteutuneita tuloksia tavoiteltuihin yhteiskunnallisiin vaikutuksiin (ei prosessimittareita)</li>
+                <li><strong>Mekanismivirhe-ilmoitus:</strong> Jos laki tuottaa päinvastaisen tuloksen kuin on tarkoitettu, MeV antaa julkisen ilmoituksen</li>
+                <li><strong>Kansalaispalaute:</strong> Kansalaiset voivat ilmoittaa "rikkinäisistä mekanismeista" (esim. "menetän rahaa jos otan työtä vastaan"). MeV tutkii ja julkaisee todennetut havainnot.</li>
+                <li><strong>Ministeriön vastausvelvoite:</strong> Mekanismivirhe-ilmoitukseen on vastattava määräajassa. Jos vastausta ei tule, MeV julkaisee "ei vastausta" -ilmoituksen ja asia siirtyy automaattisesti eduskunnan asianomaisen valiokunnan käsiteltäväksi.</li>
+            </ul>
+
+            <h3>5 § Järjestelmätason seuranta ja automaattiset hälytykset</h3>
+            <p>MeV ylläpitää julkista mittaristoa yhteiskunnan pitkän aikavälin menestyksen kannalta kriittisistä tekijöistä. MeV määrittelee mittareille kynnysarvot, joiden ylittyminen laukaisee automaattisen eduskuntakäsittelyn.</p>
+            <p>Kynnysarvot perustuvat julkiseen analyysiin. MeV voi muuttaa mittareita ja kynnysarvoja, mutta muutos on perusteltava julkisesti.</p>
+            <p>Eduskunnan asianomaisen valiokunnan on käsiteltävä asia määräajassa. Ei ministeriharkintaa — kynnyksen ylittyessä käsittely on pakollinen. Jos valiokunta ei käsittele asiaa määräajassa, asia siirtyy täysistunnon päiväjärjestykseen.</p>
+            <p><strong>Tavoiteyhtenäisyysraportti:</strong> MeV julkaisee vuosittain raportin jossa arvioidaan ministeriöiden toiminnan yhteensopivuus hallituksen ilmoittamien strategisten tavoitteiden kanssa. Raportti tunnistaa missä siilorajat estävät tavoitteiden toteutumista ja missä ministeriöiden toimet kumoavat toistensa vaikutuksia.</p>
+
+            <h3>6 § Riippumattomuus ja osaaminen</h3>
+            <p>MeV:n riippumattomuus ja osaaminen turvataan:</p>
+            <ul>
+                <li><strong>Perustuslaillinen riippumattomuus:</strong> MeV perustetaan erillislailla Suomen Pankin ja Sitran tapaan. Asema "eduskunnan yhteydessä" (vrt. perustuslain 90 §). Ministeriö ei voi antaa ohjeita eikä lakkauttaa tavallisella lailla.</li>
+                <li><strong>Pääomarahoitus:</strong> MeV rahoitetaan pääomalla (Sitra-malli), ei vuosibudjetilla. Tämä suojaa pitkäjänteistä työtä budjettileikkauksilta ja poistaa palkat poliittisesta neuvottelusta.</li>
+                <li><strong>Johtokunta (toimeenpaneva elin):</strong> Johtokunta vastaa MeV:n päivittäisestä toiminnasta, analyysien tuottamisesta ja julkaisuista. Ensimmäisen johtokunnan valitsee riippumaton valintakomitea joka koostuu kansainvälisistä akateemikoista ja pohjoismaisten vertailuinstituutioiden edustajista. Vähintään yksi jäsen mekanismisuunnittelun tai algoritmisen peliteorian alalta, vähintään yksi ei-akateemisella taustalla. Ei suomalaisia ministeriöitä, ei kotimaisia tutkimuslaitoksia. Valinta edellyttää eduskunnan 2/3 enemmistön hyväksyntää. Tämän jälkeen johtokunta nimittää seuraajansa.</li>
+                <li><strong>Toimikaudet:</strong> 7–10 vuoden kausi, ei uusittavissa. Erottaminen vain kolmen tuomarin lautakunnan päätöksellä.</li>
+                <li><strong>Kansainvälinen kokemus:</strong> Pääjohtajalta edellytetään vähintään 5 vuoden kansainvälistä kokemusta. Tämä katkaisee pienen maan verkostoriippuvuuden.</li>
+                <li><strong>Palkkaus:</strong> Kilpailukykyinen, indeksiin sidottu peruspalkka ilman harkinnanvaraisia etuja. Ei tulospalkkioita. Virka-asunto ja porrastettu lisäeläke. Yksityiskohdat perusteluissa.</li>
+                <li><strong>Karenssi:</strong> 24 kuukauden työskentelykielto valvotuissa tahoissa täydellä palkalla.</li>
+                <li><strong>Valvontalautakunta (ulkoinen tarkastuselin):</strong> 5 jäsentä, joista 3 ei-suomalaisia. Valvoo johtokunnan toimintaa, hyväksyy metodologian muutokset ja käsittelee erottamisesitykset. Erillinen johtokunnasta — valvoja ei voi olla sama kuin valvottava. Kansainvälinen kokoonpano suojaa paikalliselta paineelta ja estää verkostokaappausta.</li>
+                <li><strong>Monipuolinen osaaminen:</strong> Taloustieteilijät, peliteoreetikot, järjestelmäarkkitehdit, käyttäytymistieteilijät. Myös mekanismisuunnittelijat jotka ovat rakentaneet kannustinjärjestelmiä käytännössä — algoritminen peliteoria, hajautetut järjestelmät. Ei yhden koulukunnan hegemoniaa.</li>
+                <li><strong>Kansainväliset neuvonantajat:</strong> MeV voi kutsua kansainvälisiä huippuasiantuntijoita osa-aikaiseen neuvonantajarooliin (senior fellow). Tämä mahdollistaa huippuosaamisen hyödyntämisen ilman täysipäiväistä sitoutumista.</li>
+                <li><strong>Julkinen metodologia:</strong> Kaikki analyysit, data ja mallit avoimia ja haastettavissa.</li>
+            </ul>
+
+            <h3>7 § Toimivaltuudet</h3>
+            <p><strong>Tiedonsaantioikeus:</strong> MeV:llä on salassapitosäännösten estämättä oikeus saada maksutta valtion viranomaisilta, laitoksilta ja muilta julkista tehtävää hoitavilta yhteisöiltä kaikki tiedot jotka ovat välttämättömiä sen tehtävien hoitamiseksi. MeV:llä on oikeus suoraan tekniseen käyttöyhteyteen tietojärjestelmiin — raakadataan, ohi ministeriöiden raportointikerroksen. Tämä tarkoittaa pääsyä esimerkiksi sote-jonotietokantoihin ja Kelan etuustietoihin suoraan, jotta MeV voi ajaa omat analyysinsä eikä joudu luottamaan ministeriön tuottamiin yhteenvetoihin. Saatu salassa pidettävä tieto pysyy salassa pidettävänä MeV:n hallussa.</p>
+            <p><strong>Mallinnuskapasiteetti:</strong> MeV:llä on itsenäinen pääsy valtion mikrosimulointimalleihin (erityisesti SISU-malliin) ja oikeus ajaa vaihtoehtoisia skenaarioita. Tämä mahdollistaa riippumattoman vastamallinnuksen — MeV voi testata ministeriön väitteitä sen sijaan että luottaa pelkästään ministeriön tuottamiin laskelmiin.</p>
+            <p><strong>Julkaisuoikeus:</strong> MeV:llä on oikeus julkaista analyysit ilman ennakkohyväksyntää. Hallitus ei voi estää tai viivyttää julkaisua.</p>
+            <p><strong>Toimivallan rajat:</strong> MeV ei voi pakottaa muutoksia tai kumota lakeja. Toimivalta on informatiivinen, ei normatiivinen. Vaikutus syntyy julkisuudesta, automaattisista hälytyksistä ja poliittisen vastuun näkyväksi tekemisestä.</p>
+        </section>
+
+        <section>
+            <h2>Perustelut</h2>
+
+            <h3>1. Kukaan ei mittaa toimiiko se</h3>
+
+            <p>Valtio toimii tietämättä toimivatko sen toimet:</p>
+
+            <ul>
+                <li><strong>Eduskunta</strong> asettaa tavoitteen ("lämpötila 21°C")</li>
+                <li><strong>Hallitus</strong> toimeenpanee ("laita lämmitys päälle")</li>
+                <li><strong>Kukaan ei mittaa</strong> onko lämpötila oikeasti 21°C, vai onko lämmitin rikki, vai kumoaako avoin ikkuna vaikutuksen</li>
+            </ul>
+
+            <p>MeV sulkee tämän silmukan: se mittaa toteutuvatko tavoitteet ja tunnistaa miksi eivät.</p>
+
+            <h3>2. Ennakoiva on parempi kuin reaktiivinen</h3>
+
+            <p>Kun HE saapuu tarkastettavaksi, poliittinen pääoma on jo sidottu. Ministeriö on sitoutunut suuntaan, ja korjaaminen on kallista. Tarkastuksesta tulee vastakkainasettelu eikä yhteistyötä.</p>
+
+            <p>Ennakoiva konsultointi kääntää asetelman: MeV on resurssi, ei tarkastaja. "Mietimme tätä mekanismia — mitä voisi mennä pieleen?" Ongelmat löytyvät vaiheessa jossa korjaaminen on vielä helppoa ja kasvojen menetystä ei ole.</p>
+
+            <p>Julkiset sektorianalyysit luovat painetta ja tietoisuutta ilman lakiehdotusta. Kun kaikki tietävät missä mekanismi on rikki, korjauspaine syntyy itsestään.</p>
+
+            <h3>3. Puuttuva funktio</h3>
+
+            <p>Jokaisella toimijalla valtiokoneistossa on tehtävä:</p>
+            <ul>
+                <li><strong>Ministerit</strong> tekevät politiikkaa</li>
+                <li><strong>Virkamiehet</strong> valmistelevat ja toimeenpanevat</li>
+                <li><strong>Lakimiehet</strong> tarkistavat oikeudellisen muodon</li>
+                <li><strong>Valtiovarainministeriön ekonomistit</strong> laativat vaikutusarvioita</li>
+                <li><strong>Valtiontalouden tarkastusvirasto (VTV)</strong> tarkastaa varojen käytön</li>
+                <li><strong>Perustuslakivaliokunta</strong> arvioi perustuslainmukaisuuden</li>
+                <li><strong>Lainsäädännön arviointineuvosto</strong> kommentoi vaikutusarvioiden laatua</li>
+            </ul>
+
+            <p><strong>Miksi olemassa olevat elimet eivät riitä?</strong></p>
+            <ul>
+                <li><strong>VTV</strong> <a href="https://vtv.fi/mita-teemme/tarkastus/tuloksellisuustarkastus/">toteaa itse</a>, että tuloksellisuuden suora mittaaminen on usein mahdotonta monimutkaisessa toimintaympäristössä. Siksi tarkastus kohdistuu "edellytyksiin" — onko hallinnossa luotu riittävät mekanismit. Kritiikki: VTV keskittyy prosesseihin ("onko strategia tehty?"), ei substanssiin ("toimiko strategia?").</li>
+                <li><strong>Lainsäädännön arviointineuvosto</strong> on puhtaasti neuvoa-antava ja aliresursoitu: jäsenille maksetaan 9 600–19 200 €/vuosi sivutyönä. <a href="https://tietokayttoon.fi/julkaisut/raportti?pubid=URN:ISBN:978-952-383-285-5">Vuosikatsaus 2024</a> totesi, että keskiarvo lausunnoissa oli 3,4/5 — alhaisempi kuin edellisvuonna. Laatu ei parane.</li>
+                <li><strong>VM:n ekonomistit</strong> tuottavat ennusteet JA valmistelevat hallituksen päätöksiä. <a href="https://vm.fi/-/valtiovarainministerion-ennusteen-riippumattomuudesta">VM puolustautuu</a>, mutta rakenteellinen eturistiriita jää.</li>
+            </ul>
+
+            <p>Mutta kukaan ei systemaattisesti kysy: <strong>Toimiiko tämä mekanismi käytännössä? Miten ihmiset reagoivat kannustimiin? Tuottaako tämä halutun lopputuloksen — ja jos ei, miksi?</strong></p>
+
+            <p>Yhteistä näille elimille: mikään niistä ei ole määritellyt mitä "onnistuminen" tarkoittaa. VTV:llä ei ole mitattavia kriteerejä valvonnan toimivuudelle. Arviointineuvostolla ei ole standardia hyvälle lainsäädännölle. MeV:n missio on eksplisiittinen: mekanismien on tuotettava tavoitellut vaikutukset. Tämä on mitattavissa.</p>
+
+            <p>Ongelma on työnjaossa: funktio puuttuu. MeV täyttää tämän aukon.</p>
+
+            <p>Ministeriöt optimoivat omia siilojaan, mutta kukaan ei katso kokonaisuutta — toinen puuttuva funktio. Tulos: kannustinloukut joissa työnteko ei kannata. Jokainen osa on optimoitu, mutta kokonaisuus on rikki.</p>
+
+            <p><strong>Varjohallinto:</strong> Tällä hetkellä puuttuva funktio täytetään liikkeenjohdon konsulteilla. <a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/seizing-finlands-growth-opportunity">McKinsey</a>, Boston Consulting Group ja Deloitte ovat olleet syvällä suurten reformien (sote, maakuntauudistus) valmistelussa. Ongelmat: (1) kansainväliset standardimallit eivät istu Suomen kontekstiin, (2) konsulteilla on taloudellinen kannustin miellyttää tilaajaa, (3) laskentamallit ovat salaisia "liikesalaisuuksina". Tämä "varjohallinto" käyttää merkittävää valtaa reformien reunaehtojen muotoilussa, mutta kantaa nolla vastuuta implementoinnin onnistumisesta. Kun konsultit poistuvat PowerPoint-esitystensä kanssa, virkamiehet jäävät ratkomaan käytännön ongelmia. MeV korvaa tämän julkisella, vastuullisella kapasiteetilla.</p>
+
+            <h3>4. Laki on koodia joka ajetaan yhteiskunnassa</h3>
+
+            <p>Jos ohjelmistokehityksessä vietäisiin tuotantoon koodia ilman testausta, järjestelmät kaatuisivat heti. Lainsäädännössä tämä on normaali käytäntö: säädetään laki ja "katsotaan mitä tapahtuu".</p>
+
+            <p>MeV on mekanismien <strong>laadunvarmistus</strong>. Se testaa mekanismin logiikan ennen käyttöönottoa ja mittaa toimivuuden jälkikäteen.</p>
+
+            <h3>5. Esimerkki: SOTE-uudistus</h3>
+
+            <p>Hyvinvointialueiden rahoitusmalli luo tilanteen jossa:</p>
+            <ul>
+                <li>Alueet saavat rahaa sitä enemmän, mitä sairaampia asukkaat ovat</li>
+                <li>Valtio maksaa alijäämät</li>
+                <li>Tehokkuudesta ei palkita</li>
+            </ul>
+
+            <p>Tarkastusvaliokunta tunnisti jo valmisteluvaiheessa, että uudistuksen kaksi päätavoitetta — terveyserojen kaventaminen ja kustannusten hillintä — ovat keskenään ristiriidassa eikä niitä voida molempia maksimoida. Mekanismin suunnitteluvika oli tiedossa. Mutta valiokunta ei voinut pysäyttää "lainsäädäntöjunaa" — sillä ei ole jarrunappia.</p>
+
+            <p><strong>Neljä ennustettavaa mekanismivirhettä:</strong></p>
+            <ol>
+                <li><strong>Pehmeä budjettirajoite:</strong> Hyvinvointialueilla ei ole verotusoikeutta, mutta ne tietävät valtion pelastavan ne perustuslaillisten palveluvelvoitteiden vuoksi. Klassinen moraalikato — tunnistettu taloustieteellisessä kirjallisuudessa, mutta voimakkuutta aliarvioitiin.</li>
+                <li><strong>Palkkaharmonisaatio:</strong> Kun henkilöstö siirtyi sadoilta työnantajilta yhdelle, palkat nousivat kohti yläpäätä. Satojen miljoonien eurojen lisäkustannus, jota ei ennakoitu.</li>
+                <li><strong>ICT-integraation transaktiokustannukset:</strong> Konsulttilaskelmat olettivat tietojärjestelmien yhtenäistämisen tuovan säästöjä. Todellisuudessa päällekkäisten järjestelmien ylläpito nosti kustannuksia.</li>
+                <li><strong>Ostopalveluiden hintaralli:</strong> Suuret ja kankeat alueet eivät pystyneet neuvottelemaan tehokkaasti. Vuokralääkärit hinnoittelivat palvelunsa korkealle työvoimapulaa hyödyntäen.</li>
+            </ol>
+
+            <p>Vuoden 2024 alijäämäennusteet kasvoivat yli 1,4 miljardiin euroon. Alkuperäinen lupaus oli 3 miljardin säästöt. Jokainen näistä mekanismivirheistä oli ennustettavissa — jos joku olisi kysynyt: "Miten rationaaliset toimijat reagoivat näihin kannustimiin?"</p>
+
+            <p>MeV:n ennakkotarkastus olisi tehnyt nämä havainnot julkisiksi, pakollisiksi käsitellä, ja automaattisesti eduskunnan päätettäväksi: säädetäänkö laki jonka mekanismi on dokumentoidusti rikki?</p>
+
+            <p>Nyt voidaan sanoa "emme tienneet". MeV poistaa tämän puolustuksen.</p>
+
+            <h3>6. Kansainväliset mallit</h3>
+
+            <p>Pitkäikäiset sivilisaatiot ovat kehittäneet vastaavia elimiä: Rooman sensorit, Kiinan keisarillinen sensoraatti, Venetsian kymmenen neuvosto. Yhteinen piirre: perustuslaillinen elin eristettynä välittömästä poliittisesta paineesta, tehtävänä ylläpitää järjestelmän toimivuutta pidemmällä aikavälillä kuin mikään vaalikausi.</p>
+
+            <p><strong>Nykyaikaiset vertailukohteet:</strong></p>
+            <ul>
+                <li><strong>CPB (Alankomaat):</strong> <a href="https://www.cpb.nl/en">Centraal Planbureau</a> (~150 ekonomistia) analysoi lakiesitysten talousvaikutukset riippumattomasti. CPB:n erityispiirre on lakisääteinen monopoli: hallitus on <em>velvollinen</em> käyttämään CPB:n lukuja budjettinsa pohjana. Poliitikot eivät voi valita itselleen mieleisiä ennusteita. <a href="https://www.cpb.nl/en/node/47076">"Keuzes in Kaart"</a> (doorrekenen) — puolueiden vaaliohjelmat lasketaan läpi ennen vaaleja yhtenäisellä metodologialla. Tämä on muuttanut Alankomaiden poliittista kulttuuria: luvuista ei kiistellä, fokus on arvovalinnoissa. Suomessa puolueet esittävät omia laskelmiaan — luvut eivät ole vertailukelpoisia. MeV laajentaa CPB-mallia: ei vain talousvaikutukset, vaan kaikki mekanismivaikutukset.</li>
+                <li><strong>RSB (EU):</strong> Regulatory Scrutiny Board arvioi komission esitysten "intervention logiikan". Negatiivinen lausunto pakottaa komission vastaamaan — ei estä, mutta pakottaa selittämään.</li>
+                <li><strong>RPC (Iso-Britannia):</strong> Regulatory Policy Committee luokittelee vaikutusarviot. Heikko arvio vaatii ministerin nimenomaisen perustelun parlamentille.</li>
+            </ul>
+            <p>MeV yhdistää nämä: CPB:n analyyttinen kapasiteetti, RSB:n "selitä tai korjaa" -mekanismi ja RPC:n julkinen arviointi. Ja lisää: automaattinen valiokuntakäsittely ja koko elinkaaren seuranta, joita mikään näistä ei tee.</p>
+
+            <p><strong>Suomalainen ennakkotapaus:</strong> Tiedusteluvalvontavaltuutettu (2019) osoittaa, että uusia riippumattomia valvontaelimiä voidaan perustaa. Sen synty oli poliittinen vaihtokauppa: turvallisuuspalvelut saivat laajat uudet valtuudet (jotka vaativat perustuslain muutoksen), ja vastineeksi perustettiin riippumaton valvontaelin. Opetus MeV:lle: uudet valvontaelimet syntyvät helpoimmin kun ne kytketään johonkin, mitä valtio haluaa — esimerkiksi massainvestointien suojaamiseen tai hybridivaikuttamisen torjuntaan.</p>
+
+            <h3>7. Kansainvälinen paine</h3>
+
+            <p>Suomi on jäänyt jälkeen kansainvälisistä suosituksista:</p>
+            <ul>
+                <li><strong>GRECO (Euroopan neuvoston korruptionvastainen elin):</strong> Suomi on täyttänyt vain 4/14 suosituksesta viidennen arviointikierroksen osalta (2024). Suomi on "tehostetun valvonnan" alla.</li>
+                <li><strong>EU:n oikeusvaltiokertomukset:</strong> Komissio on toistuvasti huomauttanut Suomen puutteista — erityisesti "vaikutusvallan kauppaamisesta" ja ulkomaisen lahjonnan kriminalisoinnista.</li>
+            </ul>
+            <p>Tämä ei ole vain maineriski. EU kytkee yhä tiukemmin oikeusvaltiovaatimukset rahoitusmekanismeihin. Suomen luottoluokitus (AA+/AA) ja EU-rahoitus edellyttävät, että valvontamekanismit ovat kunnossa.</p>
+            <p><strong>MeV:n rooli korruptiontorjunnassa:</strong> MeV ei ole rikostutkintaelin — yksittäisten lahjonta- ja väärinkäytöstapausten tutkinta kuuluu poliisille ja syyttäjälle. MeV:n rooli on <em>rakenteellinen</em>: se analysoi, toimivatko läpinäkyvyysmekanismit (kuten avoimuusrekisteri), luovatko säännöt eturistiriitoja, ja suosivatko hankintalait tiettyjä toimijoita. Tämä on "korruption mahdollistavan arkkitehtuurin" analyysia — ei yksittäisten tapausten jahtaamista.</p>
+
+            <h3>8. Palkkauksen suunnittelu</h3>
+
+            <p>MeV:n palkkarakenne on suunniteltu mekanismisuunnittelun periaatteilla. Tavoite: houkutella maailmanluokan osaamista ilman poliittista itsemurhaa.</p>
+
+            <p><strong>VTV-skandaalin opetus:</strong> Tytti Yli-Viikarin tapaus osoitti, että ongelma ei ollut korkea palkka vaan <em>läpinäkymättömät harkinnanvaraiset edut</em> — Finnair-pisteet, kauneushoidot, epämääräiset matkakulut. Pienet elämäntapaedut tuhoavat legitimiteetin tehokkaammin kuin korkea läpinäkyvä palkka. MeV:n ratkaisu: korkea peruspalkka, ei harkinnanvaraisia etuja, ei mitään mikä päätyy iltapäivälehtien otsikoihin.</p>
+
+            <p><strong>Palkkataso ja vertailukohteet:</strong></p>
+            <ul>
+                <li>Pääjohtaja: 18 500 €/kk (= ~231 000 €/v lomarahoineen)</li>
+                <li>Seniorit: 14 500 €/kk (~174 000 €/v)</li>
+                <li>Vertailukohta: IMF-osastopäällikkö 241 000–373 000 $ (veroton), EKP senior 220 000–290 000 €, Sitra yliasiamies ~228 000 €</li>
+                <li>Suomen julkinen sektori maksaa ekonomisteille 50 000–80 000 € — tällä ei kilpailla maailmanluokan osaamisesta</li>
+            </ul>
+
+            <p><strong>Virka-asunto (luontoisedun verohyöty):</strong> MeV hankkii virka-asunnot Helsingin keskustasta. Markkinavuokra ~4 500 €/kk, mutta verotusarvo vain ~1 600 €/kk. Nettohyöty: ~3 500 €/kk verojen jälkeen. Vastaavan nettohyödyn tuottaminen palkkana vaatisi ~7 500 €/kk bruttokorotuksen — virka-asunto on siis 2,5× tehokkaampi kuin palkankorotus.</p>
+
+            <p><strong>Porrastettu lisäeläke:</strong> 66% loppupalkasta, erääntyy portaittain: 0% alle 5 vuotta, 50% 7 vuodessa, 100% 10 vuodessa. Tämä sitoo huippuosaajat pitkäjänteiseen työhön ja tekee aikaisesta lähdöstä valvottuun tahoon taloudellisesti kannattamatonta.</p>
+
+            <p><strong>Ulkosuomalaisten rekrytointi:</strong> Kohdejoukko on suomalaiset IMF:ssä, EKP:ssä, Fedissä ja huippuyliopistoissa. Paluumuutto Suomeen tarkoittaa 50–60% pudotusta netto-ostovoimassa. Virka-asunto ja eläkerakenne kompensoivat tätä ilman poliittisesti mahdotonta otsikkopalkkaa. Akateeminen kytkös (dosenttuuri Aallossa/HY:ssä) ja tutkimusvapaat (6 kk neljän vuoden välein) ylläpitävät kansainvälistä verkostoa.</p>
+
+            <p><strong>Miksi ei tulospalkkiota?</strong> Tarkoituksellinen valinta. Tulospalkkiot luovat vääristyneitä kannustimia ja lyhytnäköisyyttä. MeV:n vaikuttavuus mitataan vuosikymmenissä, ei kvartaaleissa.</p>
+
+            <p><strong>Poliittinen kehystys:</strong> MeV:n valvomat mekanismit kontrolloivat miljardeja. Yhden politiikkavirheen estäminen maksaa pääjohtajan koko uran palkan satakertaisesti takaisin. Oikea kehys: "halpa vakuutus" ja "isänmaallinen paluu", ei "korkea palkka".</p>
+
+            <h3>9. Pienen maan verkostoriskit</h3>
+
+            <p>Suomessa relevantti osaajajoukko on pieni ja verkostot tiheät. Tämä luo kaksi kaappausmekanismia:</p>
+
+            <p><strong>"Hyvä veli" -verkosto:</strong> Viranomaiset, poliitikot ja elinkeinoelämän edustajat ovat käyneet samat koulut, toimineet samoissa järjestöissä ja tapaavat samoissa tilaisuuksissa. Muodollinen riippumattomuus ei auta jos valvoja ja valvottava ovat vuosikymmenten tuttuja.</p>
+
+            <p><strong>Tulevaisuuden työnantaja -rajoite:</strong> Valvojalla on käytännössä vain muutama potentiaalinen työnantaja Suomessa (suuret pankit, eläkeyhtiöt, ministeriöt). Tämä luo implisiittisen kannustimen säännellä lempeästi.</p>
+
+            <p><strong>MeV:n vastaukset:</strong></p>
+
+            <p><em>Karenssi täydellä palkalla:</em> 24 kuukauden työskentelykielto valvotuissa tahoissa, 100% palkka karenssiajalta. Maksettu siirtymäaika mahdollistaa kansainvälisen paluun tai akateemisen uran.</p>
+
+            <p><em>Kansainvälisen kokemuksen vaatimus:</em> Pääjohtajalta edellytetään vähintään 5 vuoden kansainvälistä kokemusta. Henkilö jonka ura on IMF:ssä tai Fedissä ei ole riippuvainen suomalaisten pankkien tai ministeriöiden hyväksynnästä.</p>
+
+            <p><em>Diasporarekrytointi:</em> MeV:n kohderyhmä on suomalaiset jotka ovat jo ulkomailla. Kulttuurisesti päteviä, verkostoista irrallaan.</p>
+
+            <p><strong>Ensimmäisen johtokunnan rekrytoinnin rajoitteet:</strong></p>
+
+            <p>Ensimmäinen johtokunta määrittää viraston kulttuurin. Valintavirheet tässä vaiheessa jäävät pysyviksi.</p>
+
+            <p>Seuraavat taustat sulkevat pois ensimmäisestä johtokunnasta:</p>
+
+            <ol>
+                <li><strong>Valtiovarainministeriön uralinja.</strong> VM on valvottava, ei valvoja. VM:n näkökulma on budjettilähtöinen, ei mekanismilähtöinen.</li>
+                <li><strong>ETLA, VATT tai EVA.</strong> Nämä muodostavat yhden sosiaalisen verkoston eri nimillä. Riippumaton näkemys edellyttää riippumattomuutta tästä verkostosta.</li>
+                <li><strong>Helsinki GSE -monokulttuuri.</strong> Suomen talouspolitiikan valmistelijat tulevat pääosin yhdestä koulutusohjelmasta (Aalto/Hanken/HY). Sama opetussuunnitelma, samat professorit, samat sokeat pisteet.</li>
+                <li><strong>Keskuspankkiorbiitti.</strong> Suomen Pankin ja EKP:n urapolku painottaa rahapolitiikkaa, ei mekanismisuunnittelua. Osaamisprofiili ei vastaa tarvetta.</li>
+                <li><strong>Lobbaushistoria.</strong> Kuka tahansa joka on edustanut etujärjestöjä ministeriöissä on rakenteellisesti sidottu.</li>
+            </ol>
+
+            <p><strong>Periaate:</strong> Järjestelmän sisältä ei voi arvioida järjestelmää. Ulkopuolisuus on edellytys.</p>
+
+            <h3>10. Vasta-argumenttien käsittely</h3>
+
+            <p><strong>"Kuka valvoo valvojia?"</strong> — Julkinen metodologia. Kaikki analyysit, data, mallit ja päätelmät ovat avoimesti saatavilla. MeV:n johtopäätökset voidaan haastaa julkisesti. Toisin kuin ministeriöiden sisäinen valmistelu, MeV:n ajattelu on näkyvää.</p>
+
+            <p><strong>"Kuka päättää mikä on hyvä mekanismi?"</strong> — MeV:n arviot perustuvat julkiseen metodologiaan: kannustinanalyysi, peliteoria, järjestelmädynamiikka. Metodologia on haastettavissa — kuka tahansa voi osoittaa virheen logiikassa tai oletuksissa. Ennusteet ovat testattavia: jos MeV sanoo "tämä mekanismi tuottaa X:n" ja X ei toteudu, virhe on näkyvä ja analysoitava. Toisin kuin poliittiset lupaukset, MeV:n väitteet eivät katoa — ne jäävät julkiseen rekisteriin ja niitä verrataan toteutuneisiin tuloksiin.</p>
+
+            <p><strong>"Tämä lisää byrokratiaa"</strong> — Päinvastoin: MeV konsolidoi hajanaisia toimintoja. Tällä hetkellä mekanismivalvonta on pirstaloitunut: Lainsäädännön arviointineuvosto (resurssit niukat), VTV:n avoimuusrekisteri (irrallaan muusta analyysistä), STN:n tutkimukset (joita kukaan ei lue), ja ministeriöiden omat vaikutusarviot (jotka kirjoitetaan poliittisen päätöksen jälkeen). MeV yhdistää nämä funktiot yhteen instituutioon: arviointineuvoston analyysityö, avoimuusrekisterin data, ja tutkimustiedon integrointi lainsäädäntöprosessiin. Tulos: yksi virasto hajanaisten komiteoiden sijaan.</p>
+
+            <p><strong>"Ministeriöt eivät kuuntele"</strong> — Siksi julkisuus. Jos ministeriö sivuuttaa MeV:n varoituksen ja laki epäonnistuu, vastuu on dokumentoitu. Julkinen ennuste luo poliittisen hinnan sen sivuuttamiselle.</p>
+
+            <p><strong>"Asiantuntijat eivät ole neutraaleja"</strong> — Siksi monipuolinen osaaminen (6 §): taloustieteilijät, peliteoreetikot, järjestelmäarkkitehdit — ei yhden koulukunnan hegemoniaa. Siksi julkinen metodologia: kuka tahansa voi haastaa analyysin. Ja siksi pitkät, ei-uusittavat toimikaudet: ei tarvetta miellyttää poliittisia isäntiä.</p>
+
+            <p><strong>"Meillä on jo Lainsäädännön arviointineuvosto"</strong> — Arviointineuvosto on tärkeä mutta riittämätön. (1) Se tarkastaa vain luonnosvaiheessa olevia lakiesityksiä — toimivalta päättyy kun laki säädetään. (2) Se on puhtaasti neuvoa-antava — ei voi estää viallisen lain säätämistä. (3) Resurssit ovat niukat: jäsenille maksetaan 9 600–19 200 €/vuosi, joten tehtävä on sivutyö huipputason asiantuntijoille. He voivat lukea esityksen ja tarkistaa loogisen johdonmukaisuuden, mutta eivät voi ajaa uudelleen ministeriön ekonometrisiä malleja. (4) Tulokset eivät parane: keskiarvo vuoden 2024 lausunnoissa oli 3,4/5, alhaisempi kuin edellisvuonna. MeV tekee enemmän: se kattaa koko elinkaaren (valmistelu → säätäminen → toteutus → arviointi → korjaus), mutta myös toimii proaktiivisesti — tunnistaa rikkinäisiä mekanismeja ja ehdottaa uusia lakeja tai olemassa olevien kumoamista. Arviointineuvosto reagoi HE:ihin; MeV voi myös synnyttää niitä.</p>
+
+            <p><strong>"Yli-Viikari osoittaa että riippumattomat virastot korruptoituvat"</strong> — VTV-skandaali on varoitus huonosta arkkitehtuurista, ei syy luopua riippumattomuudesta. MeV:n rakenne on suunniteltu tämä opetus huomioiden (ks. kohta 8): korkea läpinäkyvä palkka, ei harkinnanvaraisia etuja, pakollinen kansainvälinen arviointi, kolmen tuomarin erottamismenettely. Etiikka on insinööriongelma: rajoitteet toimivat, hyve ei.</p>
+
+            <p><strong>"Tämä on liian kokeellista"</strong> — Kokeellista on nykytila: lainsäädäntö on ainoa monimutkainen järjestelmä jota ei testata ennen käyttöönottoa. Kyberturvallisuus, armeija, rahoitus, tekoäly — kaikki ovat ratkaisseet tämän. Riski ei ole MeV:n perustaminen vaan sen perustamatta jättäminen.</p>
+
+            <h3>11. Mekanismien mekanismit</h3>
+
+            <p>Lait ovat mekanismeja. Mutta myös lainsäädäntöprosessi on mekanismi. Vaalijärjestelmä on mekanismi. Perustuslakivaliokunnan rooli on mekanismi.</p>
+
+            <p>MeV:n toimivalta kattaa kaikki tasot: yksittäiset lait, niiden vuorovaikutukset, ja rakenteet jotka tuottavat lakeja. Jos jokin rakenne systemaattisesti estää toimivien mekanismien syntymisen, se on MeV:n analysoitava — vaikkei MeV voi sitä muuttaa.</p>
+
+            <p>MeV:n tehtävä on parantaa mekanismeja. Perustuslaki on mekanismi. Jos se ei toimi, MeV sanoo niin — ja sanoo miten sen pitäisi toimia. Mitä eduskunta tekee tällä tiedolla on eduskunnan asia.</p>
+
+            <h3>12. Korjaa itse tai korjataan puolestasi</h3>
+
+            <p>Valtiot jotka eivät korjaa mekanismejaan itse joutuvat lopulta ulkoisen korjauksen kohteeksi. Kreikka 2010-luvulla, Argentiina toistuvasti, Italia EU:n painostuksessa — kun sisäinen korjauskyky pettää, IMF, EKP tai EU asettavat ehdot.</p>
+
+            <p>Suomi ei ole vielä siinä pisteessä. Mutta suunta on selvä:</p>
+            <ul>
+                <li>Julkinen velka kasvaa rakenteellisesti</li>
+                <li>GRECO ja EU ovat jo huomauttaneet puutteista</li>
+                <li>Hyvinvointialueiden rahoitusmalli on dokumentoidusti rikki</li>
+                <li>Eläkejärjestelmän kestävyys edellyttää korjauksia joita ei tehdä</li>
+            </ul>
+
+            <p>Ilman omaa korjauskapasiteettia Suomi ajautuu tilanteeseen jossa ulkopuoliset — luottoluokittajat, IMF, EU-komissio — määrittelevät mitä on tehtävä. Silloin ei enää valita <em>mitä</em> korjataan vaan <em>miten nopeasti</em> totellaan.</p>
+
+            <p><strong>MeV on suvereniteetti-investointi.</strong> Se rakentaa kyvyn tunnistaa ja korjata mekanismivirheet ennen kuin ne kumuloituvat kriisiksi. Vaihtoehto ei ole "ei korjausta" — vaihtoehto on "korjaus ulkoisilla ehdoilla, ilman omaa harkintavaltaa".</p>
+
+            <p>Ulkoiset korjaajat optimoivat omia tavoitteitaan: IMF velkojien etua, EU-komissio euroalueen vakautta, luottoluokittajat sijoittajien riskienhallintaa. Nämä eivät ole sama asia kuin suomalaisten pitkän aikavälin etu. Kreikan leikkaukset palvelivat saksalaisia ja ranskalaisia pankkeja, eivät kreikkalaisia eläkeläisiä. MeV on ainoa instituutio jonka eksplisiittinen tehtävä on optimoida suomalaisen yhteiskunnan menestystä — ei velkojien, ei euroalueen, vaan Suomen.</p>
+
+            <p>Maat jotka rakentavat oman analyysikapasiteetin (Alankomaat, Singapore) pysyvät ohjaksissa. Maat jotka eivät (Kreikka, Italia) menettävät ne. Suomi voi valita kumpaan ryhmään kuuluu.</p>
+
+            <h3>Taustatutkimus</h3>
+
+            <p><strong><a href="mev-analyysi">Mekanismianalyysin nykytila Suomessa:</a></strong> Yksityiskohtainen kartoitus siitä mitä kapasiteettia valtiolla jo on (VM, VATT, arviointineuvosto, sektorikohtaiset toimijat) ja mitä puuttuu. Kansainvälinen vertailu Alankomaihin (CPB), Iso-Britanniaan (OBR) ja Singaporeen.</p>
+
+            <h3>Akateeminen tausta</h3>
+
+            <p>Akateeminen <strong>mekanismisuunnittelu</strong> (mechanism design) on vakiintunut taloustieteen ala. Nobel-palkinnot 2007 (Hurwicz, Maskin, Myerson) ja 2012 (Roth, Shapley) tunnustivat alan merkityksen. Mekanismisuunnittelua sovelletaan käytännössä — huutokaupat, kouluvalinnat, elinluovutukset — mutta sovellukset ovat kapeita ja rajattuja.</p>
+
+            <p>Lähialoja on useita: peliteoria (matemaattinen perusta), julkisen valinnan teoria (public choice), instituutiotaloustiede, käyttäytymistaloustiede ja sääntelyvaikutusten arviointi (RIA, Regulatory Impact Assessment). Mikään näistä ei kuitenkaan systemaattisesti kysy lainsäädännöstä: "Miten rationaaliset toimijat reagoivat näihin kannustimiin? Mikä on tasapainotila kun kaikki ovat sopeutuneet?"</p>
+
+            <p>Vertailu muihin aloihin:</p>
+            <table>
+                <tr><th>Ala</th><th>Stressitestaus</th><th>Kypsyys</th></tr>
+                <tr><td>Kyberturvallisuus</td><td>Red teaming, penetraatiotestaus</td><td>Korkea</td></tr>
+                <tr><td>Armeija</td><td>Sotapelit, punainen joukkue</td><td>Korkea</td></tr>
+                <tr><td>Tekoälyturvallisuus</td><td>Jailbreaking, spesifikaation testaus</td><td>Keskikorkea</td></tr>
+                <tr><td>Rahoitus</td><td>Stressitestit (CCAR, EBA)</td><td>Keskitaso</td></tr>
+                <tr><td>Lainsäädäntö</td><td>—</td><td>Kehittymätön</td></tr>
+            </table>
+
+            <p>Kehittynein työ tapahtuu aloilla joissa "koodi on laki": tekoälyturvallisuudessa tutkitaan "specification gaming" -ilmiötä (tavoitteen kiertäminen sääntöjä rikkomatta), ja hajautetuissa järjestelmissä (DAO) käytetään työkaluja kuten cadCAD hallintojärjestelmien simulointiin ennen käyttöönottoa. Näillä aloilla on havaittu: järjestelmää ei voi turvata yrittämättä murtaa sitä.</p>
+
+            <p>MeV institutionalisoisi tämän lähestymistavan lainsäädäntöön. Ohjelmistokehityksessä vastaava muutos tapahtui kun testaus siirtyi satunnaisesta toiminnasta omaksi funktiokseen — laadunvarmistukseksi (QA, Quality Assurance). MeV tekisi saman lainsäädännölle: systemaattinen testaus ennen käyttöönottoa, seuranta käytön aikana.</p>
+
+        </section>
+
+    </div>
+
+    <div class="callout-box" style="margin-top:3rem;display:flex;gap:1.5rem;align-items:flex-start;">
+        <a href="/" style="flex-shrink:0;"><img src="assets/cover_front_600.jpg" alt="Mekanismirealismi — Sivilisaation käyttöohje" style="width:140px;border:1px solid var(--border);"></a>
+        <div>
+            <p style="color:var(--accent);font-family:var(--font-sans);font-size:0.8rem;font-weight:600;letter-spacing:0.5px;margin-bottom:0.5rem;">MEKANISMIREALISMI: SIVILISAATION KÄYTTÖOHJE</p>
+            <p>Kaikki haluavat muuttaa Suomen suuntaa eikä äänestäminen ole toiminut — koska ongelma ei ole kuljettajassa vaan koneessa. Kukaan ei katso kannustimia, takaisinkytkentöjä eikä aikahorisontteja. Kirja esittää diagnoosin ja korjauksen. MeV on yksi osa sitä.</p>
+            <div style="margin-top:1.2rem;display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center;">
+                <a href="#" style="font-family:var(--font-sans);font-size:0.85rem;display:inline-block;padding:0.65rem 1.4rem;background:var(--accent);color:var(--bg);text-decoration:none;">Lue kirja</a>
+                <a href="/" style="font-family:var(--font-sans);font-size:0.85rem;display:inline-block;padding:0.65rem 1.4rem;border:1px solid var(--accent);color:var(--accent);text-decoration:none;">Lue lisää</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="essay-nav">
+        <a href="mechanism-authority">In English</a>
+        <a href="mev-analyysi">Analyysi: nykytila</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>CC-BY-NC-SA 4.0 · Elias Kunnas · etunimi at sukunimi piste com · <a href="https://x.com/EliasKunnas">@EliasKunnas</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /mekanismirealismi.txt
+Allow: /dialektinen_opas.txt
+
+Sitemap: https://mekanismirealismi.fi/sitemap.xml

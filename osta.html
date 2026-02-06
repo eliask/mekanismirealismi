@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osta kirja | Mekanismirealismi</title>
+    <meta name="description" content="Mekanismirealismi: Sivilisaation käyttöohje. Saatavilla kovakantisena, pehmeäkantisena, PDF- ja EPUB-versiona.">
+    <link rel="canonical" href="https://mekanismirealismi.fi/osta">
+    <meta property="og:title" content="Osta kirja — Mekanismirealismi">
+    <meta property="og:description" content="398 sivua. Saatavilla kovakantisena, pehmeäkantisena, PDF- ja EPUB-versiona.">
+    <meta property="og:type" content="book">
+    <meta property="og:url" content="https://mekanismirealismi.fi/osta">
+    <meta property="og:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <meta property="og:site_name" content="Mekanismirealismi">
+    <meta property="og:locale" content="fi_FI">
+    <meta property="book:author" content="Elias Kunnas">
+    <meta property="book:isbn" content="978-952-88-1577-8">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Osta kirja — Mekanismirealismi">
+    <meta name="twitter:description" content="398 sivua. Kovakantinen, pehmeäkantinen, PDF, EPUB.">
+    <meta name="twitter:image" content="https://mekanismirealismi.fi/assets/og_image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "Mekanismirealismi: Sivilisaation käyttöohje",
+        "author": {
+            "@type": "Person",
+            "name": "Elias Kunnas"
+        },
+        "url": "https://mekanismirealismi.fi/osta",
+        "image": "https://mekanismirealismi.fi/assets/cover_front_1200.jpg",
+        "inLanguage": "fi",
+        "numberOfPages": 398,
+        "bookFormat": [
+            "https://schema.org/Hardcover",
+            "https://schema.org/Paperback",
+            "https://schema.org/EBook"
+        ],
+        "isbn": "978-952-88-1577-8",
+        "workExample": [
+            {
+                "@type": "Book",
+                "isbn": "978-952-88-1578-5",
+                "bookFormat": "https://schema.org/Hardcover"
+            },
+            {
+                "@type": "Book",
+                "isbn": "978-952-88-1577-8",
+                "bookFormat": "https://schema.org/Paperback"
+            },
+            {
+                "@type": "Book",
+                "isbn": "978-952-88-1579-2",
+                "bookFormat": "https://schema.org/EBook"
+            },
+            {
+                "@type": "Book",
+                "isbn": "978-952-88-1580-8",
+                "bookFormat": "https://schema.org/EBook"
+            }
+        ]
+    }
+    </script>
+    <style>
+        .book-hero {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            padding: 1rem 0 2rem;
+        }
+        .book-hero img {
+            width: 200px;
+            height: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            flex-shrink: 0;
+        }
+        .book-hero .info h1 {
+            font-family: var(--font-body);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            line-height: 1.3;
+            margin-bottom: 0.3rem;
+        }
+        .book-hero .info .subtitle {
+            font-size: 1rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+        .book-hero .info .author {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+        .book-hero .info .spec {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+        .formats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        .format-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+        }
+        .format-card h3 {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-bright);
+            margin-bottom: 0.5rem;
+        }
+        .format-card .isbn {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+        }
+        .format-card a.buy-btn {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            padding: 0.5rem 1.2rem;
+            background: var(--accent);
+            color: var(--bg);
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .format-card a.buy-btn:hover {
+            background: var(--accent-hover);
+            text-decoration: none;
+        }
+        @media (max-width: 640px) {
+            .book-hero { flex-direction: column; align-items: center; text-align: center; }
+            .book-hero img { width: 160px; }
+            .formats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;">
+        <a class="logo" href="/">Mekanismirealismi</a>
+        <nav>
+            <a href="/">Etusivu</a>
+            <a href="sisallys">Sisällys</a>
+            <a href="qa">Q&A</a>
+            <a href="haku">Haku</a>
+            <a href="selaa">Selaa</a>
+        </nav>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <div class="book-hero">
+        <img src="assets/cover_front_1200.jpg" alt="Mekanismirealismi — kansi" width="1200" height="1908">
+        <div class="info">
+            <h1>Mekanismirealismi</h1>
+            <div class="subtitle">Sivilisaation käyttöohje</div>
+            <div class="author">Elias Kunnas</div>
+            <div class="spec">
+                398 sivua<br>
+                5 osaa · 14 lukua · 68 analysoitua argumenttia<br>
+                CC-BY-NC-SA 4.0<br>
+                Saatavilla verkkokaupoista ja kirjastoista
+            </div>
+        </div>
+    </div>
+
+    <section style="border-bottom:none;padding-top:1rem;">
+
+        <h2>Formaatit</h2>
+
+        <div class="formats">
+            <div class="format-card">
+                <h3>Kovakantinen</h3>
+                <div class="isbn">ISBN 978-952-88-1578-5</div>
+                <span style="font-family:var(--font-sans);font-size:0.8rem;color:var(--text-dim);">Tulossa lähiaikoina</span>
+            </div>
+            <div class="format-card">
+                <h3>Pehmeäkantinen</h3>
+                <div class="isbn">ISBN 978-952-88-1577-8</div>
+                <span style="font-family:var(--font-sans);font-size:0.8rem;color:var(--text-dim);">Tulossa lähiaikoina</span>
+            </div>
+            <div class="format-card">
+                <h3>PDF (e-kirja)</h3>
+                <div class="isbn">ISBN 978-952-88-1579-2</div>
+            </div>
+            <div class="format-card">
+                <h3>EPUB (e-kirja)</h3>
+                <div class="isbn">ISBN 978-952-88-1580-8</div>
+                <div style="margin-top:0.5rem;font-family:var(--font-sans);font-size:0.8rem;">
+                    Amazon: <a href="https://www.amazon.com/dp/B0GMY4K11M">US</a> · <a href="https://www.amazon.de/dp/B0GMY4K11M">DE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Kirjastosta</h2>
+        <p>Saatavilla kirjastoista fyysisenä ja e-kirjana. <a href="https://www.finna.fi/Record/fikka.5911665">Hae Finna.fi:stä →</a></p>
+    </section>
+
+    <section>
+        <h2>Lue verkossa</h2>
+        <p><a href="sisallys">Koko sisällysluettelo</a> — 5 osaa, 14 lukua ja kaikki alaotsikot. Linkit kaikkeen verkkosisältöön.</p>
+        <p><a href="qa">Tekoälyn vastauksia kysymyksiin kirjasta</a> — kysymyksiä ja vastauksia haettavalla sivulla.</p>
+        <p><a href="argumentit">68 systeemivirhettä</a> — koko analyysi luettavissa verkossa.</p>
+        <p><a href="kannustinketju">Kannustinketju</a> ja <a href="kielen-valta">Kielen valta</a> — kokonaisia lukuja luettavissa.</p>
+        <p><a href="selaa">Selaa kirjan etuosaa</a> — kansi, sisällysluettelo ja prologi.</p>
+    </section>
+
+    <div class="essay-nav">
+        <a href="/">← Etusivu</a>
+        <a href="sisallys">Sisällysluettelo</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>CC-BY-NC-SA 4.0 · Elias Kunnas · etunimi at sukunimi piste com · <a href="https://x.com/EliasKunnas">@EliasKunnas</a></p>
+</footer>
+
+</body>
+</html>
